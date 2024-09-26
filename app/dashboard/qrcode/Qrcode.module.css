@@ -1,0 +1,98 @@
+/* Qrcode.module.css */
+
+.Container {
+    padding: 20px;
+    background-color: #ffffff; /* Background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.Title {
+    font-size: 24px;
+    color: #000000; /* Black color for the title */
+    margin-bottom: 20px;
+}
+  
+.Options {
+    margin-bottom: 20px;
+}
+  
+.OptionButton {
+    background-color: #000000; /* Black color */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.OptionButton:hover {
+    background-color: #007bb8; /* Darker blue on hover */
+}
+  
+.InputField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #009ddc; /* Blue border */
+    border-radius: 5px;
+}
+  
+.SubmitButton {
+    background-color: #009ddc; /* Blue color */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.CloseButton {
+    background-color: #fcb827; /* Orange color */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+  
+.SubmitButton:hover {
+    background-color: #963d97; /* Darker red on hover */
+}
+
+.CloseButton:hover {
+    background-color: #e03a3c; /* Darker red on hover */
+}
+
+/* New styles for add and remove buttons */
+.AddButton, .RemoveButton {
+    background-color: #009ddc; /* Blue color for add button */
+    color: #ffffff; /* White text */
+    border: none;
+    width: 40px; /* Width for the circle */
+    height: 40px; /* Height for the circle */
+    border-radius: 50%; /* Make it circular */
+    font-size: 24px; /* Font size for the icon */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.AddButton:hover {
+    background-color: #007bb8; /* Darker blue on hover */
+}
+
+.RemoveButton {
+    background-color: #e03a3c; /* Red color for remove button */
+}
+
+.RemoveButton:hover {
+    background-color: #b03235; /* Darker red on hover */
+}
