@@ -1,0 +1,166 @@
+/* Home.module.css */
+
+/* Nueva clase para el fondo con degradado circular */
+.backgroundGradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Envía el fondo detrás del contenido */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 40%, rgba(128, 128, 128, 0.2) 80%);
+    pointer-events: none; /* Para que no interfiera con la interacción de los elementos dentro del container */
+}
+
+/* Styles for the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+/* Styles for the title */
+.title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #009ddc;
+    margin-bottom: 20px;
+}
+
+/* Contenedor para la descripción */
+.description-container {
+    display: flex;               /* Usar flexbox */
+    justify-content: center;     /* Centrar horizontalmente */
+    align-items: center;         /* Centrar verticalmente */
+    height: 100vh;              /* Altura completa del viewport */
+}
+
+/* Estilos para el texto de la descripción */
+.description {
+    font-size: 1.2rem;          /* Tamaño de fuente */
+    padding: 20px;              /* Espaciado interno */
+    border: 2px solid #def1d8;  /* Borde alrededor del texto */
+    border-radius: 10px;        /* Esquinas redondeadas */
+    text-align: center;         /* Centrar el texto */
+    max-width: 600px;           /* Ancho máximo */
+    max-height: 400px;          /* Altura máxima */
+    width: 100%;                /* Ancho completo del contenedor */
+    height: auto;               /* Altura automática para permitir el wrapping */
+    box-sizing: border-box;     /* Incluir padding y borde en el ancho y alto total del elemento */
+    margin: 0 auto;             /* Centrar el cuadro horizontalmente */
+    overflow: hidden;           /* Evitar que el contenido sobresalga */
+    /* background-color: #ffffff; */
+}
+
+/* Styles for links */
+.link {
+    color: #000000;
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #f6821f;
+}
+
+/* Button styles */
+.button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.button.active {
+    background-color: #f6821f;
+}
+
+.button:hover {
+    background-color: #d5721e;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:disabled {
+    background-color: #ccc;
+}
+
+/* Form styles */
+.form {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Input styles */
+.input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content styles */
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 300px;
+}
+
+/* Close button styles */
+.close {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Changed from right to left */
+    font-weight: bold; /* Make it bold */
+    font-size: 1.5rem; /* Increase size */
+    color: black; /* Set color to black */
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e03a3c; /* Change color on hover */
+}
+
+/* New class for buttons inside modal */
+.buttonContainer {
+    display: flex;
+    justify-content: space-between; /* Space them out horizontally */
+    margin-top: 15px; /* Add top margin */
+}
+
+.submitButton {
+    margin-left: 10px; /* Add space between the buttons */
+    margin-right: 10px; /* Add space between the buttons */
+}
