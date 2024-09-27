@@ -4,10 +4,7 @@ import styles from './Dashboard.module.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import {
-  monstserrat, lusitana, roboto, roboto_mono,
-  roboto_Slab, rokkitt, rubik,ropa_Sans
-} from '@/ui/fonts'; // Importa las fuentes
+import { rubik } from '@/ui/fonts'; // Importa las fuentes
 
 const Sidebar = () => {
   const pathname = usePathname(); // Obtener la ruta actual

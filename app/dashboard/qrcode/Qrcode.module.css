@@ -1,98 +1,118 @@
-/* Qrcode.module.css */
-
 .Container {
-    padding: 20px;
-    background-color: #ffffff; /* Background color */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Space inside the container */
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 8px; /* Rounded corners for a smooth appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
-  
+
 .Title {
-    font-size: 24px;
-    color: #000000; /* Black color for the title */
-    margin-bottom: 20px;
+    font-size: 24px; /* Large font size for the title */
+    color: #000000; /* Black color for text */
+    margin-bottom: 20px; /* Space below the title */
 }
-  
+
 .Options {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space below the options section */
 }
-  
+
 .OptionButton {
-    background-color: #000000; /* Black color */
-    color: #ffffff; /* White text */
-    border: none;
-    padding: 10px 15px;
-    margin-right: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #000000; /* Black background for buttons */
+    color: #ffffff; /* White text color */
+    border: none; /* No border for a clean look */
+    padding: 10px 15px; /* Padding inside the button */
+    margin-right: 10px; /* Space between buttons */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color on hover */
 }
-  
+
 .OptionButton:hover {
-    background-color: #007bb8; /* Darker blue on hover */
+    background-color: #007bb8; /* Change background color on hover */
 }
-  
+
 .InputField {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #009ddc; /* Blue border */
-    border-radius: 5px;
-}
-  
-.SubmitButton {
-    background-color: #009ddc; /* Blue color */
-    color: #ffffff; /* White text */
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
+    width: 40%; /* Width of the input field */
+    padding: 10px; /* Padding inside the input */
+    margin-right: 10px; /* Space between inputs and buttons */
+    border: 1px solid #009ddc; /* Border with a blue color */
+    border-radius: 5px; /* Rounded corners for the input */
 }
 
-.CloseButton {
-    background-color: #fcb827; /* Orange color */
-    color: #ffffff; /* White text */
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-  
-.SubmitButton:hover {
-    background-color: #963d97; /* Darker red on hover */
+.InputRow {
+    display: flex; /* Flexbox layout for horizontal alignment */
+    align-items: center; /* Center vertically align items in the row */
+    margin-bottom: 10px; /* Space below each row of inputs */
 }
 
-.CloseButton:hover {
-    background-color: #e03a3c; /* Darker red on hover */
-}
-
-/* New styles for add and remove buttons */
-.AddButton, .RemoveButton {
-    background-color: #009ddc; /* Blue color for add button */
-    color: #ffffff; /* White text */
-    border: none;
-    width: 40px; /* Width for the circle */
-    height: 40px; /* Height for the circle */
-    border-radius: 50%; /* Make it circular */
-    font-size: 24px; /* Font size for the icon */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    transition: background-color 0.3s;
-}
-
-.AddButton:hover {
-    background-color: #007bb8; /* Darker blue on hover */
+.AddButton {
+    background-color: #009ddc; /* Blue background for the add button */
+    color: #ffffff; /* White text color */
+    border: none; /* No border for a clean look */
+    width: 20px; /* Fixed width */
+    height: 20px; /* Fixed height */
+    border-radius: 50%; /* Circular shape */
+    margin-left: 10px; /* Space on the left side */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size for the button icon */
+    display: flex; /* Flexbox for centering the icon */
+    justify-content: center; /* Center the icon horizontally */
+    align-items: center; /* Center the icon vertically */
 }
 
 .RemoveButton {
-    background-color: #e03a3c; /* Red color for remove button */
+    background-color: #e03a3c; /* Red background for the remove button */
+    color: #ffffff; /* White text color */
+    border: none; /* No border for a clean look */
+    width: 20px; /* Fixed width */
+    height: 20px; /* Fixed height */
+    border-radius: 50%; /* Circular shape */
+    margin-left: 10px; /* Space on the left side */
+    margin-right: 10px; /* Space on the right side */
+    margin-bottom: 4px; /* Space below the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size for the button icon */
+    display: flex; /* Flexbox for centering the icon */
+    justify-content: center; /* Center the icon horizontally */
+    align-items: center; /* Center the icon vertically */
+}
+
+.AddButton:hover {
+    background-color: #007bb8; /* Change background color on hover */
 }
 
 .RemoveButton:hover {
-    background-color: #b03235; /* Darker red on hover */
+    background-color: #b80000; /* Change background color on hover */
 }
+
+.SubmitButton {
+    background-color: #009ddc; /* Blue background for the submit button */
+    color: #ffffff; /* White text color */
+    border: none; /* No border for a clean look */
+    padding: 10px 15px; /* Padding inside the button */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-right: 10px; /* Space between buttons */
+}
+
+.CloseButton {
+    background-color: #fcb827; /* Yellow background for the close button */
+    color: #ffffff; /* White text color */
+    border: none; /* No border for a clean look */
+    padding: 10px 15px; /* Padding inside the button */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-right: 10px; /* Space between buttons */
+}
+
+.SubmitButton:hover {
+    background-color: #963d97; /* Change background color on hover */
+}
+
+.CloseButton:hover {
+    background-color: #e03a3c; /* Change background color on hover */
+}
+
+
+.Description {
+    margin-bottom: 16px;
+  }
