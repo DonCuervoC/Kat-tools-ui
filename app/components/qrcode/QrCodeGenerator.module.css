@@ -5,9 +5,9 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    border: 2px solid #def1d8; /* Optional border */
-    border-radius: 10px; /* Rounded corners */
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .input {
@@ -26,6 +26,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-bottom: 15px;
 }
 
 .button:hover {
@@ -34,4 +35,26 @@
 
 .qrCodeOutput {
     margin-top: 20px;
+}
+
+.messageContainer {
+    display: flex;
+    align-items: center; /* Center the image and text vertically */
+    justify-content: flex-start; /* Align content to the start */
+    margin-bottom: 20px; /* Space below the message container */
+}
+
+.qrCodeImage {
+    margin-right: 10px; /* Space between image and text */
+}
+
+.Description {
+    display: inline-block; /* Ensure the text stays inline with the image */
+}
+
+/* New class for centering the QR code */
+.qrCodeCenterContainer {
+    display: flex;
+    justify-content: center; /* Center the QR code */
+    width: 100%; /* Take full width */
 }

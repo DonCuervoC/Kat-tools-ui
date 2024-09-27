@@ -1,27 +1,55 @@
 // app/components/qrcode/QrCodeGenerator.tsx
+
 import React from 'react';
 import QRCode from 'qrcode';
 import styles from './QrCodeGenerator.module.css';
-
+import Image from 'next/image';
 
 interface QrCodeGeneratorProps {
-    value: string;
+    value: string | { key: string; value: string }[];
+    onClose: () => void;
 }
 
-const QrCodeGenerator: React.FC<QrCodeGeneratorProps> = ({ value }) => {
+const QrCodeGenerator: React.FC<QrCodeGeneratorProps> = ({ value, onClose }) => {
     const [qrCodeUrl, setQrCodeUrl] = React.useState('');
 
     React.useEffect(() => {
-        if (value) {
-            QRCode.toDataURL(value).then((url) => {
-                setQrCodeUrl(url);
-            });
-        }
+        const generateQRCode = async () => {
+            const data = typeof value === 'string' ? value : JSON.stringify(value);
+            const url = await QRCode.toDataURL(data);
+            setQrCodeUrl(url);
+        };
+
+        generateQRCode();
     }, [value]);
 
     return (
-        <div>
-            {qrCodeUrl && <img src={qrCodeUrl} alt="QR Code" />}
+        <div className={styles.qrCodeContainer}>
+            {qrCodeUrl && (
+                <div className={styles.qrCodeOutput}>
+                    <div className={styles.messageContainer}>
+                        <p className={styles.Description}>Cool! Here’s your <strong>QR Code!</strong></p>
+                        <Image
+                            width={70}
+                            height={100}
+                            src="/cats/cat28.jpg"
+                            alt="QR Code"
+                            className={styles.qrCodeImage}
+                        />
+
+                    </div>
+
+                    {/* QR Code image centered */}
+                    <div className={styles.qrCodeCenterContainer}>
+                        <Image
+                            src={qrCodeUrl}
+                            width={210}
+                            height={270}
+                            alt="QR Code Pc version"
+                        />
+                    </div>
+                </div>
+            )}
             <button
                 onClick={() => {
                     const link = document.createElement('a');
@@ -31,15 +59,15 @@ const QrCodeGenerator: React.FC<QrCodeGeneratorProps> = ({ value }) => {
                     link.click();
                     document.body.removeChild(link);
                 }}
-                className={styles.downloadButton}
+                className={styles.button}
             >
                 Download QR Code
+            </button>
+            <button onClick={onClose} className={styles.button}>
+                Close
             </button>
         </div>
     );
 };
 
 export default QrCodeGenerator;
-
-
-
