@@ -4,6 +4,7 @@ import React from 'react';
 import QRCode from 'qrcode';
 import styles from './QrCodeGenerator.module.css';
 import Image from 'next/image';
+import { rubik} from '@/ui/fonts'; // Importa las fuentes
 
 interface QrCodeGeneratorProps {
     value: string | { key: string; value: string }[];
@@ -24,11 +25,11 @@ const QrCodeGenerator: React.FC<QrCodeGeneratorProps> = ({ value, onClose }) => 
     }, [value]);
 
     return (
-        <div className={styles.qrCodeContainer}>
+        <div className={`${styles.qrCodeContainer} ${rubik.className}`}>
             {qrCodeUrl && (
                 <div className={styles.qrCodeOutput}>
                     <div className={styles.messageContainer}>
-                        <p className={styles.Description}>Cool! Here’s your <strong>QR Code!</strong></p>
+                        <p className={styles.Description}>Cool! Here&apos;s your <strong>QR Code!</strong></p>
                         <Image
                             width={70}
                             height={100}

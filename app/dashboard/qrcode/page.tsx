@@ -118,7 +118,7 @@ const Qrcode: React.FC = () => {
               <h2 className={styles.Title}><strong>Enter your data</strong></h2>
               <p className={styles.Description}>
                 A <strong>label</strong> is a name, and the <strong>detail</strong> is the information that goes with it.
-                For example, if the label is Phone, the detail would be your phone number.
+                For example, if the label is &apos;Phone&apos;, the detail would be your phone number.
               </p>
               <br />
               <p className={styles.Description}>Phone: 514 XXX XXXX</p>

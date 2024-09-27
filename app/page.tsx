@@ -4,10 +4,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Home.module.css'; // Ensure this file exists
-import {
-  monstserrat, lusitana, roboto, roboto_mono,
-  roboto_Slab, rokkitt, rubik, ropa_Sans
-} from '@/ui/fonts'; // Importa las fuentes
+import { rubik} from '@/ui/fonts'; // Importa las fuentes
 
 import Image from 'next/image';
 
@@ -61,20 +58,12 @@ const Home = () => {
       </div>
       
       <div className={styles.descriptionContainer}>
-        {/* <div className={styles.description}>
-          Hello, world! I’m <strong>Nelson Cuervo</strong>, a passionate developer crafting
-          applications that blend <strong>backend</strong> and <strong>frontend</strong> skills. I recognized the power of small tools
-          to transform our daily lives, so I created this space where you can find various handy applications
-          (some might even encourage a little <strong>lazy behavior!</strong>  &#128539;). Despite their modest size, these tools pack
-          a punch to simplify your day-to-day tasks.This application is a constant work in progress, and<strong> i'm always open to feedback and constructive ideas. </strong>
-          Good vibes all around, and see you out there!
-        </div> */}
                <div className={styles.description}>
-          Hello, world! I’m <strong>Nelson Cuervo</strong>, a passionate developer crafting
+          Hello, world! I&apos;m <strong>Nelson Cuervo</strong>, a passionate developer crafting
           applications that blend <strong>backend</strong> and <strong>frontend</strong> skills. I recognized the power of small tools
           to transform our daily lives, so I created this space where you can find various handy applications
           (some might even encourage a little lazy behavior! &#128513;). Despite their modest size, these tools pack
-          a punch to simplify your day-to-day tasks.This application is a constant work in progress, and<strong> i'm always open to feedback and constructive ideas. </strong>
+          a punch to simplify your day-to-day tasks.This application is a constant work in progress, and<strong> i&apos;m always open to feedback and constructive ideas. </strong>
           Good vibes all around, and see you out there!
         </div>
       </div>

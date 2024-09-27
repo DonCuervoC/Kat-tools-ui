@@ -1,4 +1,5 @@
-// @types/qrcode.d.ts
+// app/@types/qrcode.d.ts
 declare module 'qrcode' {
-    export function toDataURL(value: string, options?: any): Promise<string>;
+    export function toDataURL(data: string | object): Promise<string>;
+    // Define otras funciones y tipos según sea necesario
 }
