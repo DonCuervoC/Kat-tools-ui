@@ -1,3 +1,4 @@
+// app/dashboard/Content.tsx
 import { ReactNode } from 'react';
 import styles from './Dashboard.module.css';
 

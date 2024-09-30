@@ -1,9 +1,11 @@
+// app/dashboard/page.tsx
+
 import Sidebar from './Sidebar';
 import Content from './Content';
 
 export default function DashboardPage() {
   return (
-    <div style={{ display: 'flex', height: '100vh' }}> 
+    <div style={{ display: 'flex', flex: '1' }}> {/* Asegura que el sidebar y el contenido usen el espacio disponible */}
       <Sidebar />
       <Content>
         <h1>Dashboard Home</h1>

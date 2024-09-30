@@ -1,3 +1,4 @@
+// app/dashboard/Sidebar.tsx
 "use client";
 
 import styles from './Dashboard.module.css';

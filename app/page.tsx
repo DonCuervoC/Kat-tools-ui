@@ -4,9 +4,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Home.module.css'; // Ensure this file exists
-import { rubik} from '@/ui/fonts'; // Importa las fuentes
+// import { rubik} from '@/ui/fonts'; // Importa las fuentes
 
 import Image from 'next/image';
+import RootLayout from './layout';
 
 const Home = () => {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -35,7 +36,8 @@ const Home = () => {
 
   return (
     // <div className={styles.container}>
-    <div className={`${styles.container} ${rubik.className}`}>
+    <RootLayout>
+    <div className={`${styles.container}`}>
       <div className={styles.backgroundGradient}></div>
       <div>
 
@@ -127,6 +129,7 @@ const Home = () => {
         </div>
       )}
     </div>
+     </RootLayout>
   );
 };
 
