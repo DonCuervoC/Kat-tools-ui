@@ -42,19 +42,49 @@
 
 
 // app/layout.tsx
+// import "./globals.css";
+// import { rubik} from '@/ui/fonts';
+
+// interface LayoutProps {
+//   children: React.ReactNode;
+// }
+
+// export default function RootLayout({ children }: LayoutProps) {
+//   return (
+//     <html lang="es">
+//       <body  className={`${rubik.className}`}>
+//         {children}
+//       </body>
+//     </html>
+//   );
+// }
+
+// app/layout.tsx
+// export const metadata = {
+//   title: "tools for office work",
+//   description: "This is a simple app for helping people with simple jobs, all in one platform",
+// };
+
+// app/layout.tsx
+import { ReactNode } from 'react';
 import "./globals.css";
-import { rubik} from '@/ui/fonts';
+import { rubik } from '@/ui/fonts';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
+
 }
 
-export default function RootLayout({ children }: LayoutProps) {
+const RootLayout = ({ children }: LayoutProps) => {
   return (
     <html lang="es">
-      <body  className={`${rubik.className}`}>
+      <body className={`${rubik.className}`}>
         {children}
+
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
+
