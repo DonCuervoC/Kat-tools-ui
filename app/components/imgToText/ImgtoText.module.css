@@ -56,6 +56,12 @@
     color: #000000; /* Text color for options */
 }
 
+.buttonContainer {
+    display: flex;           /* Usar flexbox para el contenedor */
+    justify-content: flex-end; /* Alinear los elementos al final (derecha) */
+    margin-top: 20px;      /* Espacio superior opcional para separar del contenido */
+}
+
 .button {
     padding: 10px 20px;
     background-color: #000000;
@@ -69,6 +75,22 @@
 
 .button:hover {
     background-color: #d5721e;
+}
+
+.button02 {
+    padding: 10px 20px;
+    background-color:#963d97 ; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.button02:hover {
+    background-color:#e03a3c;
 }
 
 .result {
@@ -91,3 +113,19 @@
     color: #000000; /* Black color for text */
     margin-bottom: 20px; /* Space below the title */
 }
+
+.error{
+    font-size: 20px;
+    color: #e03a3c; 
+    margin-bottom: 20px;
+    /* background-color: #ccc; */
+}
+
+
+.boxError {
+    display: flex;                  /* Usar flexbox */
+    flex-direction: column;        /* Organizar elementos en columna */
+    align-items: center;           /* Centrar horizontalmente */
+    justify-content: center;       /* Centrar verticalmente */
+    margin-bottom: 20px;
+  }

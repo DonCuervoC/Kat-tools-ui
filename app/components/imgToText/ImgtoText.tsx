@@ -4,6 +4,9 @@
 
 import React, { useState } from 'react';
 import styles from '@/app/components/imgToText/ImgtoText.module.css'; // Import CSS styles for the component
+import Image from 'next/image';
+// import {Spinner} from "@nextui-org/spinner";
+
 
 export default function ImgtoText() {
   // State to manage the selected image file
@@ -55,22 +58,11 @@ export default function ImgtoText() {
     }
 
     setLoading(true); // Comienza el estado de carga
-  
-    // Log de información sobre la imagen seleccionada
-    // console.log('Imagen seleccionada:');
-    // console.log(`Nombre: ${image.name}`); // Nombre de la imagen
-    // console.log(`Tamaño: ${image.size} bytes`); // Tamaño de la imagen
-    // console.log(`Tipo: ${image.type}`); // Tipo de la imagen
-  
+    
     try {
       const formData = new FormData(); // Crear un nuevo objeto FormData para enviar el archivo
       formData.append('image', image); // Agregar el archivo de imagen al FormData
       formData.append('language', language); // Agregar el idioma seleccionado
-
-      // console.log(formData);
-
-      console.log('Enviando datos:', formData);
-      console.log('Intentando enviar la imagen a la API...');
 
       // Enviar una solicitud POST a la API del backend para procesar la imagen
       const response = await fetch('/api/processImage', {
@@ -78,14 +70,17 @@ export default function ImgtoText() {
         body: formData, // Enviar el FormData como cuerpo de la solicitud
       });
   
-      console.log('Recibiendo respuesta del backend...');
       // Verificar si la respuesta indica un error
       if (!response.ok) {
         throw new Error('An error occurred while processing the image');
       }
-      console.log('Analizar la respuesta JSON');
+
       const result = await response.json(); // Analizar la respuesta JSON
-      setTextResult(result.text); // Actualizar el estado con el texto extraído
+      // Extraer el texto extraído de la respuesta
+      const extractedText = result.extractedText;
+      // Actualizar el estado con el texto extraído
+      setTextResult(extractedText);
+
     } catch (err) {
       setError('An error occurred while processing the image'); // Establecer mensaje de error en caso de falla
       console.error('Error al procesar la imagen:', err); // Logar el error en la consola
@@ -93,22 +88,47 @@ export default function ImgtoText() {
       setLoading(false); // Finaliza el estado de carga
     }
   };
+
+    // Función para restablecer todos los estados a su valor original
+    const handleErase = () => {
+      setImage(null); // Restablecer la imagen a null
+      setLanguage('eng'); // Restablecer el idioma a 'eng'
+      setTextResult(''); // Limpiar el texto extraído
+      setError(null); // Limpiar el mensaje de error
+      setLoading(false); // Asegurarse de que la carga esté en false
+      const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
+      if (fileInput) {
+        fileInput.value = ''; // Limpiar el campo de entrada de archivo
+      }
+    };
+  
   
 
   return (
     <div className={styles.container}>
+      {/* <div><Spinner><label>Processing your image, please wait...</label></Spinner></div> */}
     <h1 className={styles.Title}>OCR Image to Text</h1>
     <p>Upload an image <strong>(JPG/JPEG/PNG)</strong> with text and select the language.</p>
     <br />
     <label><strong>01.</strong> Upload your image:</label>
-    <input
-      type="file"
-      accept=".jpg, .jpeg, .png"
-      className={styles.input}
-      onChange={handleImageChange}
-    />
-    {error && <p className={styles.error}>{error}</p>}
-    {loading && <p>Processing your image, please wait...</p>}
+      <input
+        type="file"
+        accept=".jpg, .jpeg, .png"
+        className={styles.input}
+        onChange={handleImageChange}
+      />
+      {error && <div className={styles.boxError} >
+        <Image
+          src="/cats/cat18.jpg"
+          width={70}
+          height={110}
+          alt="error Cat"
+        />
+        <p className={styles.error}>{error}</p>
+      </div>
+      }
+      {/* {loading && <div><Spinner><label>Processing your image, please wait...</label></Spinner></div>} */}
+      {loading && <div><p>Processing your image, please wait...</p></div>}
 
     <label><strong>02.</strong> Select Language:</label>
     <select className={styles.select} value={language} onChange={handleLanguageChange}>
@@ -119,15 +139,24 @@ export default function ImgtoText() {
 
     <button onClick={handleSubmit} className={styles.button}>Submit</button>
 
-    {textResult && (
-      <div className={styles.result}>
-        <h2>Extracted Text:</h2>
-        <textarea className={styles.textarea} value={textResult} readOnly />
-        <button onClick={() => downloadTxtFile(textResult)} className={styles.button}>Download as .txt</button>
-      </div>
-    )}
-  </div>
-);
+      {textResult && (
+        <div className={styles.result}>
+                  <Image
+          src="/cats/cat29.jpg"
+          width={40}
+          height={80}
+          alt="error Cat"
+        />
+          <h2>Extracted Text:</h2>
+          <textarea className={styles.textarea} value={textResult} readOnly />
+          <div className={styles.buttonContainer}>
+            <button onClick={() => downloadTxtFile(textResult)} className={styles.button}>Download as .txt</button>
+            <button onClick={handleErase} className={styles.button02}>Delete all</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 
