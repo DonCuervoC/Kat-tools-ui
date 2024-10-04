@@ -50,23 +50,46 @@
     background-color: #d5721e;
 }
 
+
+
+/*  ******  */
+
+
 .textAreas {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Space between textareas */
-    width: 100%;
-    margin-top: 20px;
+    display: flex; /* Establece el contenedor como un flexbox para alinear los text areas */
+    justify-content: space-between; /* Espacia los elementos dentro del contenedor */
+    gap: 20px; /* Espacio entre los text areas */
+    width: 100%; /* El contenedor ocupa el 100% del ancho disponible */
+    margin-top: 20px; /* Margen superior del contenedor */
 }
 
-.textarea {
-    width: 48%; /* Each textarea occupies 48% of the total width */
-    height: 150px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    resize: none;
+/* Media query for small screens */
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .textAreas {
+        flex-direction: column; /* Change layout to vertical */
+        gap: 10px; /* Space between text areas in column layout */
+    }
+    .textarea {
+        width: 100% !important; /* Force textarea to occupy 100% width */
+        margin: 0; /* Remove any margins */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+    }
 }
+
+
+.textarea {
+    width: 48%; /* Each textarea occupies 48% width on larger screens */
+    height: 150px; /* Fixed height for text areas */
+    padding: 10px; /* Inner padding for textarea */
+    border: 1px solid #ccc; /* Border for textarea */
+    border-radius: 5px; /* Rounded corners for textarea */
+    background-color: #f8f8f8; /* Background color for textarea */
+    resize: none; /* Disable resizing of textarea */
+}
+
+
+
 
 /* Switch styles */
 .switchContainer {
