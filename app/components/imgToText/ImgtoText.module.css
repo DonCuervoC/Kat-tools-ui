@@ -129,3 +129,26 @@
     justify-content: center;       /* Centrar verticalmente */
     margin-bottom: 20px;
   }
+
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    color: #d5721e; /* Color del texto */
+    font-size: 1.5rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    animation: fadeIn 0.5s; /* Efecto de entrada */
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

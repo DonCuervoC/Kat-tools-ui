@@ -1,11 +1,11 @@
 //app/components/omgToText/ImgToText.tsx
-
 "use client"; 
 
 import React, { useState } from 'react';
 import styles from '@/app/components/imgToText/ImgtoText.module.css'; // Import CSS styles for the component
 import Image from 'next/image';
-// import {Spinner} from "@nextui-org/spinner";
+// import {Spinner} from "@nextui-org/react";
+
 
 
 export default function ImgtoText() {
@@ -106,8 +106,10 @@ export default function ImgtoText() {
 
   return (
     <div className={styles.container}>
-      {/* <div><Spinner><label>Processing your image, please wait...</label></Spinner></div> */}
+     
     <h1 className={styles.Title}>OCR Image to Text</h1>
+
+
     <p>Upload an image <strong>(JPG/JPEG/PNG)</strong> with text and select the language.</p>
     <br />
     <label><strong>01.</strong> Upload your image:</label>
@@ -127,8 +129,8 @@ export default function ImgtoText() {
         <p className={styles.error}>{error}</p>
       </div>
       }
-      {/* {loading && <div><Spinner><label>Processing your image, please wait...</label></Spinner></div>} */}
-      {loading && <div><p>Processing your image, please wait...</p></div>}
+      {/* {loading && <div> <Spinner label="Processing your image, please wait..." color="primary" /></div>} */}
+      {loading && <div className={styles.loading}><p>Processing your image, please wait...</p></div>}
 
     <label><strong>02.</strong> Select Language:</label>
     <select className={styles.select} value={language} onChange={handleLanguageChange}>

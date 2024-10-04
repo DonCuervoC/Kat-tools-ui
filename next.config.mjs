@@ -118,7 +118,14 @@ const nextConfig = {
     serverComponentsExternalPackages: ['tesseract.js'],
   },
   images: {
-    domains: ['lh3.googleusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
   webpack(config, { isServer }) {
     // Alias para resolver la ruta correcta del worker de tesseract.js
@@ -133,4 +140,5 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
 

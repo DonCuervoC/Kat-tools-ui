@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/spinner": "^2.0.34",
     "formidable": "^3.5.1",
+    "framer-motion": "^11.11.1",
     "multer": "1.4.5-lts.1",
     "next": "14.2.13",
     "qrcode": "^1.5.4",
