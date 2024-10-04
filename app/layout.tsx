@@ -69,7 +69,7 @@
 import { ReactNode } from 'react';
 import "./globals.css";
 import { rubik } from '@/ui/fonts';
-import { NextUIProvider } from '@nextui-org/react';
+//import { NextUIProvider } from '@nextui-org/react';
 
 interface LayoutProps {
   children: ReactNode;
@@ -81,9 +81,9 @@ const RootLayout = ({ children }: LayoutProps) => {
     <html lang="es">
       {/* <NextUIProvider> */}
       <body className={`${rubik.className}`}>
-      <NextUIProvider> 
+      {/* <NextUIProvider>  */}
         {children}
-        </NextUIProvider> 
+        {/* </NextUIProvider>  */}
       </body>
       {/* </NextUIProvider> */}
     </html>

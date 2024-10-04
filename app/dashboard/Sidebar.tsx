@@ -44,6 +44,9 @@ const Sidebar = () => {
         <li>
           <Link href="/dashboard/imgtext" className={pathname === '/dashboard/imgtext' ? styles.active : ''}>From img to txt</Link>
         </li>
+        <li>
+          <Link href="/dashboard/translator" className={pathname === '/dashboard/translator' ? styles.active : ''}>Translator</Link>
+        </li>
       </ul>
     </nav>
   );
