@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 };
 
 
-
-export default function RootLayout({ children }: LayoutProps) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+export default function RootLayout({ children, types }: LayoutProps) {
   return (
     <html lang="en">
       <body className={`${rubik.className} antialiased`}>
