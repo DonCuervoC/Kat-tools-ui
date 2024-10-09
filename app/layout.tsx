@@ -99,9 +99,19 @@ import "./globals.css";
 import { rubik } from '@/ui/fonts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { Metadata } from 'next'; // Import Metadata from Next.js
+
 interface LayoutProps {
   children: ReactNode;
+  // Add the required 'types' property if necessary
+  types?: string[]; // Adjust the type based on what Next.js expects
 }
+
+export const metadata: Metadata = {
+  title: 'mini tools',
+  description: 'Provide mini desk tools for users in them office',
+  // Add other metadata fields as needed
+};
 
 const RootLayout = ({ children }: LayoutProps) => {
   return (
@@ -114,4 +124,5 @@ const RootLayout = ({ children }: LayoutProps) => {
 };
 
 export default RootLayout;
+
 
