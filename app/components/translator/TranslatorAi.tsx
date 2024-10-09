@@ -14,7 +14,7 @@ import { useDebounce } from "../useDebounce";
 import { useStore } from "@/hooks/useStore";
 // import { translate } from "@/app/api/translate/route";
 // import TextArea from "../TextArea";
-import styles from './translator.module.css';
+import styles from './Translator.module.css';
 import Image from 'next/image';
 
 export default function TranslatorAi() {
