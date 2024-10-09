@@ -69,6 +69,8 @@
 import { ReactNode } from 'react';
 import "./globals.css";
 import { rubik } from '@/ui/fonts';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 //import { NextUIProvider } from '@nextui-org/react';
 
 interface LayoutProps {

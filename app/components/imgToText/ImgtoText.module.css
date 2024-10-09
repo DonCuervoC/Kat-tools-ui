@@ -21,6 +21,12 @@
     margin-bottom: 20px;
 }
 
+.input:focus {
+    border-color: #009ddc; /* Cambiamos el color del borde al azul cuando esté enfocado */
+    box-shadow: 0 0 8px #009ddc; /* Agregamos una sombra iluminada */
+    outline: none; /* Eliminamos el borde predeterminado del navegador */
+  }
+
 /* Updated styles for the select element */
 .select {
     width: 40%;

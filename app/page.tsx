@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Home.module.css'; // Ensure this file exists
 // import { rubik} from '@/ui/fonts'; // Importa las fuentes
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import Image from 'next/image';
 import RootLayout from './layout';
