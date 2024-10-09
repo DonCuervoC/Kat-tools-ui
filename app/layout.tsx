@@ -66,28 +66,49 @@
 // };
 
 // app/layout.tsx
+// import { ReactNode } from 'react';
+// import "./globals.css";
+// import { rubik } from '@/ui/fonts';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+// interface LayoutProps {
+//   children: ReactNode;
+
+// }
+
+// const RootLayout = ({ children }: LayoutProps) => {
+//   return (
+//     <html lang="es">
+
+//       <body className={`${rubik.className}`}>
+  
+//         {children}
+
+//       </body>
+
+//     </html>
+//   );
+// };
+
+// export default RootLayout;
+
+
+// app/layout.tsx
 import { ReactNode } from 'react';
 import "./globals.css";
 import { rubik } from '@/ui/fonts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-//import { NextUIProvider } from '@nextui-org/react';
-
 interface LayoutProps {
   children: ReactNode;
-
 }
 
 const RootLayout = ({ children }: LayoutProps) => {
   return (
-    <html lang="es">
-      {/* <NextUIProvider> */}
+    <html lang="en">
       <body className={`${rubik.className}`}>
-      {/* <NextUIProvider>  */}
         {children}
-        {/* </NextUIProvider>  */}
       </body>
-      {/* </NextUIProvider> */}
     </html>
   );
 };
