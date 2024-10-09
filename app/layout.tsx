@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 
 interface LayoutProps {
   children: ReactNode;
+  types?: any;
 }
 
 export const metadata: Metadata = {
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
   description: "Kit with office tools to make the job easier",
 };
 
-const RootLayout = ({ children }: Readonly<LayoutProps>) => {
+
+
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body className={`${rubik.className} antialiased`}>
@@ -22,6 +25,4 @@ const RootLayout = ({ children }: Readonly<LayoutProps>) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}
