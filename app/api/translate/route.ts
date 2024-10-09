@@ -1,7 +1,7 @@
 // app/api/translate/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
-import { AUTO_LANGUAGE, SUPPORTED_LANGUAGES } from '@/constants';
+import {  SUPPORTED_LANGUAGES } from '@/constants';
 import { FromLanguage, language } from '@/app/@types/types.d';
 import OpenAI from 'openai';
 import Bottleneck from 'bottleneck';  // Importamos Bottleneck
@@ -17,8 +17,11 @@ const openai = new OpenAI(configuration);
 
 // Definición de los roles en el chat
 enum ChatRole {
+    // eslint-disable-next-line no-unused-vars
     User = 'user',
+    // eslint-disable-next-line no-unused-vars
     Assistant = 'assistant',
+    // eslint-disable-next-line no-unused-vars
     System = 'system',
 }
 
@@ -44,18 +47,6 @@ async function translate({
     const fromCode = fromLanguage === 'auto' ? 'auto' : SUPPORTED_LANGUAGES[fromLanguage];
     const toCode = SUPPORTED_LANGUAGES[toLanguage];
 
-    /*
-    const messages = [
-        {
-            role: ChatRole.System,
-            content: 'You are an AI that translates text. You receive a text from the user. Do not answer, just translate the text. The original language is surrounded by `{{` and `}}`. You can also receive {{auto}} which means you have to detect the language. The language you translate to is surrounded by `[[` and `]]`.',
-        },
-        {
-            role: ChatRole.User,
-            content: `${text} {{${fromCode}}} [[${toCode}]]`,
-        },
-    ];
-    */
 
     const messages = [
         {
@@ -131,6 +122,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ result }, { status: 200 });
     } catch (error) {
+        console.error(error);
         return NextResponse.json({ error: 'Error processing translation' }, { status: 500 });
     }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // app/@types/qrcode.d.ts
 declare module 'qrcode' {
     export function toDataURL(data: string | object): Promise<string>;

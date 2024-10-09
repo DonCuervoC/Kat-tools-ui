@@ -15,6 +15,7 @@ import { SectionType } from '../@types/types.d'
 interface Props {
     type: SectionType
     loading?: boolean
+    // eslint-disable-next-line no-unused-vars
     onChange: (value: string) => void
     value: string
 }
