@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { Form } from 'react-bootstrap'
 import { AUTO_LANGUAGE, SUPPORTED_LANGUAGES } from '@/constants'
-import { SectionType, type FromLanguage, type language } from '@/app/@types/types.d'
+// import { SectionType, type FromLanguage, type language } from '@/app/@types/types.d'
+import { SectionType, type FromLanguage, type language } from '@/@types/types.d'
 
 type Props =
     | { type: SectionType.From, value: FromLanguage, onChange: (language: FromLanguage) => void }

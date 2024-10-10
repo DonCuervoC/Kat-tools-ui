@@ -2,7 +2,8 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import {  SUPPORTED_LANGUAGES } from '@/constants';
-import { FromLanguage, language } from '@/app/@types/types.d';
+// import { FromLanguage, language } from '@/app/@types/types.d';
+import { FromLanguage, language } from '@/@types/types.d';
 import OpenAI from 'openai';
 import Bottleneck from 'bottleneck';  // Importamos Bottleneck
 

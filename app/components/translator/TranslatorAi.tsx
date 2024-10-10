@@ -6,7 +6,11 @@ import { AUTO_LANGUAGE, VOICE_FOR_LANGUAGE } from "@/constants";
 import { Container, Row, Col, Button, Stack } from 'react-bootstrap'
 import { ArrowsIcon, ClipboardIcon, SpeakerIcon } from "../Icons";
 import { LanguageSelector } from "./LanguageSelector";
-import { SectionType } from "@/app/@types/types.d";
+
+// import { SectionType } from "@/app/@types/types.d";
+import { SectionType } from "@/@types/types.d";
+
+
 import { TextArea } from "../TextArea";
 import { useEffect } from "react";
 import { useDebounce } from "../useDebounce";
@@ -38,6 +42,7 @@ export default function TranslatorAi() {
     useEffect(() => {
         if (debounceFromText === '') return;
         if (debounceFromText === result) return;
+        
 
         // Llamar a la API del servidor
         fetch('/api/translate', { // Actualizamos la ruta aquí

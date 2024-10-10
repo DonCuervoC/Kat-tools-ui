@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
-import { SectionType } from '../@types/types.d'
 // import { SectionType } from '../@types/types.d'
+import { SectionType } from '@/@types/types.d'
 
 // interface CommonProps {
 //     onChange: (value: string) => void

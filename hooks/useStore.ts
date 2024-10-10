@@ -1,6 +1,8 @@
-import { LangTransState, ActionTransState, language, FromLanguage } from '@/app/@types/types.d';
+// import { LangTransState, ActionTransState, language, FromLanguage } from '@/app/@types/types.d';
+import { LangTransState, ActionTransState, language, FromLanguage } from '@/@types/types.d';
 import { AUTO_LANGUAGE } from '@/constants';
 import { useReducer } from 'react';
+
 
 /*
 // 1. create a initial state
@@ -146,6 +148,17 @@ const initialState: LangTransState = {
       // lógica del estado dentro del reducer
       // porque lo evitamos en los componentes
       if (state.fromLanguage === AUTO_LANGUAGE) return state
+
+      let  _fromLanguage;
+      let _toLanguage;
+
+      if( state.toLanguage === state.fromLanguage){
+        _toLanguage =  state.fromLanguage
+        _fromLanguage = state.toLanguage 
+      }
+      console.log(_toLanguage)
+      console.log(_fromLanguage)
+
   
       const loading = state.fromText !== ''
   
@@ -248,3 +261,18 @@ const initialState: LangTransState = {
       setResult
     }
   }
+
+
+
+        // console.log("'***************'")
+      // console.log("State state")
+      // console.log(state)
+      // console.log("'***************'")
+      // console.log("action action")
+      // console.log(action)
+      // console.log("'***************'")
+      // console.log("state.toLanguage")
+      // console.log(state.toLanguage)
+      // console.log("'***************'")
+      // console.log("state.fromLanguage")
+      // console.log(state.fromLanguage)
