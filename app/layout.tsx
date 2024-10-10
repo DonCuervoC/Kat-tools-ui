@@ -1,23 +1,15 @@
 // app/layout.tsx
-// import { ReactNode } from 'react';
 import "./globals.css";
 import { rubik } from '@/ui/fonts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Metadata } from 'next';
-
-// interface LayoutProps {
-//   children: ReactNode;
-
-// }
 
 export const metadata: Metadata = {
   title: "Office tools",
   description: "Kit with office tools to make the job easier",
 };
 
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-// export default function RootLayout({ children }: LayoutProps) {
+// export default function RootLayout({ children,}: Readonly<{children: React.ReactNode;}>) {
 //   return (
 //     <html lang="en">
 //       <body className={`${rubik.className} antialiased`}>
@@ -28,12 +20,26 @@ export const metadata: Metadata = {
 // }
 
 
-export default function RootLayout({ children,}: Readonly<{children: React.ReactNode;}>) {
+export default function RootLayout({
+  children,
+  types,
+  // analytics,
+}: {
+  children: React.ReactNode
+  // analytics: React.ReactNode
+  types: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body className={`${rubik.className} antialiased`}>
-        {children}
-      </body>
-    </html>
-  );
+    <>
+      <html lang="en">
+        <body className={`${rubik.className} antialiased`}>
+          {children}
+          {types}
+          {/* {analytics} */}
+        </body>
+      </html>
+
+
+    </>
+  )
 }
