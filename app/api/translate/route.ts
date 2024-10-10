@@ -8,7 +8,7 @@ import OpenAI from 'openai';
 import Bottleneck from 'bottleneck';  // Importamos Bottleneck
 
 // Configuración de la API de OpenAI
-const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+const apiKey = process.env.OPENAI_API_KEY_TRANSLATOR;
 
 const configuration = {
     apiKey: apiKey,
