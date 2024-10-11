@@ -1,4 +1,23 @@
 /* app/dashboard/TvContainer.module.css */
+.container {
+    position: relative; /* Permite que los elementos se posicionen correctamente */
+    width: 100vw;      /* Ocupa todo el ancho de la ventana */
+    height: 100vh;     /* Ocupa toda la altura de la ventana */
+    overflow: hidden;  /* Oculta cualquier contenido que se desborde */
+}
+
+.videoBackground {
+    position: absolute; /* Posiciona el video como fondo */
+    top: 0;
+    left: 0;
+    width: 100%;       /* Hace que el video ocupe todo el ancho */
+    height: 100%;      /* Hace que el video ocupe toda la altura */
+    object-fit: cover; /* Mantiene la relación de aspecto del video */
+    z-index: -1;      /* Envía el video al fondo */
+    filter: grayscale(100%); /* Aplica filtro de blanco y negro */
+    opacity: 0.2;    /* Aplica opacidad del 85% */
+}
+
 .tvContainer {
     display: flex;               /* Usar flexbox para permitir distribución adecuada */
     justify-content: flex-start; /* Alinear contenido a la izquierda */
@@ -7,7 +26,7 @@
     height: 80vh;                /* Alto del contenedor */
     background-color: #fff;      /* Fondo blanco para visualizar el contenido */
     border-radius: 20px;         /* Bordes redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para efecto de "televisor" */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para efecto de "televisor" */
     margin: 70px auto;           /* Centrar el contenedor en la pantalla */
     overflow: hidden;            /* Oculta el contenido que se desborda */
     /* padding-top: 20px; */
