@@ -1,10 +1,8 @@
-// app/components/qrcode/QrCodeGenerator.tsx
-
 import React from 'react';
 import QRCode from 'qrcode';
 import styles from './QrCodeGenerator.module.css';
 import Image from 'next/image';
-import { rubik} from '@/ui/fonts'; // Importa las fuentes
+import { rubik } from '@/ui/fonts'; // Importa las fuentes
 
 interface QrCodeGeneratorProps {
     value: string | { key: string; value: string }[];
@@ -29,7 +27,9 @@ const QrCodeGenerator: React.FC<QrCodeGeneratorProps> = ({ value, onClose }) => 
             {qrCodeUrl && (
                 <div className={styles.qrCodeOutput}>
                     <div className={styles.messageContainer}>
-                        <p className={styles.Description}>Cool! Here&apos;s your <strong>QR Code!</strong></p>
+                        <p className={styles.Description}>
+                            Cool! Here&apos;s your <strong>QR Code!</strong>
+                        </p>
                         <Image
                             width={70}
                             height={100}
@@ -37,7 +37,6 @@ const QrCodeGenerator: React.FC<QrCodeGeneratorProps> = ({ value, onClose }) => 
                             alt="QR Code"
                             className={styles.qrCodeImage}
                         />
-
                     </div>
 
                     {/* QR Code image centered */}

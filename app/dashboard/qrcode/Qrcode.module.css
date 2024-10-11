@@ -1,19 +1,27 @@
 .Container {
-    padding: 20px;  /* Espacio dentro del contenedor */
-    background-color: #ffffff;  /* Fondo blanco para el contenedor */
-    border-radius: 8px;  /* Esquinas redondeadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
-    margin-left: 14px;  /* Separación con el componente de la izquierda */
+    padding: 20px; /* Mantengo el padding */
+    background-color: transparent; /* Cambia a transparente */
+    border-radius: 8px; /* Mantén las esquinas redondeadas si lo deseas */
+    margin-top: 60px; /* Agrega un margen superior de 40px */
+    display: flex; /* Flexbox para la alineación */
+
+    flex-direction: column; /* Para que los elementos estén en una columna */
+    margin-left: 60px; /* Mantén la separación si es necesario */
+
 }
+
 
 .Title {
     font-size: 24px; /* Large font size for the title */
     color: #000000; /* Black color for text */
     margin-bottom: 20px; /* Space below the title */
+    align-items: center;
 }
 
 .Options {
-    margin-bottom: 20px; /* Space below the options section */
+    display: flex; /* Mantén los botones en una fila */
+    justify-content: center; /* Centrará los botones horizontalmente */
+    margin-bottom: 20px; /* Mantén el espacio inferior */
 }
 
 .OptionButton {

@@ -78,88 +78,100 @@ export default function TranslatorAi() {
 
     return (
         <div className={styles.container}>
+            <div >
 
-            <Container fluid>
+                <Container fluid>
 
-                <div style={{
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '10px',
-                    marginBottom: '20px',
-                    textAlign: 'center'
-                }}>
-                    <Image
-                        width={70}
-                        height={100}
-                        src="/cats/cat22.jpg"
-                        alt="Auto detected CAT"
-                    />
-                    <h2 className={styles.title}>Michi Translate</h2>
-                    <h5>Powered by AI</h5>
+                    <div style={{
+                        position: 'relative',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '5px' ,
+                        marginTop: '60px' ,
+                        // marginBottom: '10px',
+                        textAlign: 'center'
+                    }}>
+                        <Image
+                            width={70}
+                            height={100}
+                            src="/cats/cat22.jpg"
+                            alt="Auto detected CAT"
+                        />
+                        <h2 className={styles.title}><strong>Michi Translate</strong>
+                        <br></br>Powered by AI
+                        </h2>
+                        
+                    </div>
 
-                </div>
+                    <div style={{
+                        border: '2px solid rgba(128, 128, 128, 0.2)', // Borde gris con opacidad
+                        borderRadius: '8px', // Esquinas redondeadas (opcional)
+                        padding: '10px' // Espaciado interno (opcional)
+                    }}>
 
-                <Row>
-                    <Col>
-                        <Stack gap={2}>
-                            <LanguageSelector
-                                type={SectionType.From}
-                                value={fromLanguage}
-                                onChange={setFromLanguage}
-                            />
+                        <Row>
+                            <Col>
+                                <Stack gap={2}>
+                                    <LanguageSelector
+                                        type={SectionType.From}
+                                        value={fromLanguage}
+                                        onChange={setFromLanguage}
+                                    />
 
-                            <TextArea
-                                type={SectionType.From}
-                                value={fromText}
-                                onChange={setFromText}
-                            />
-                        </Stack>
+                                    <TextArea
+                                        type={SectionType.From}
+                                        value={fromText}
+                                        onChange={setFromText}
+                                    />
+                                </Stack>
 
-                    </Col>
+                            </Col>
 
-                    <Col xs='auto' >
-                        <Button variant='link' disabled={fromLanguage === AUTO_LANGUAGE} onClick={interchangeLanguages}>
-                            <ArrowsIcon />
-                        </Button>
-                    </Col>
+                            <Col xs='auto' >
+                                <Button variant='link' disabled={fromLanguage === AUTO_LANGUAGE} onClick={interchangeLanguages}>
+                                    <ArrowsIcon />
+                                </Button>
+                            </Col>
 
-                    <Col>
-                        <Stack gap={2}>
-                            <LanguageSelector
-                                type={SectionType.To}
-                                value={toLanguage}
-                                onChange={setToLanguage}
-                            />
-                            <div style={{ position: 'relative' }}>
-                                <TextArea
-                                    loading={loading}
-                                    type={SectionType.To}
-                                    value={result}
-                                    onChange={setResult}
-                                />
-                                <div style={{ position: 'absolute', left: 0, bottom: 0, display: 'flex' }}>
-                                    <Button
-                                        variant='link'
-                                        onClick={handleClipboard}>
-                                        <ClipboardIcon />
-                                    </Button>
-                                    <Button
-                                        variant='link'
-                                        onClick={handleSpeak}>
-                                        <SpeakerIcon />
-                                    </Button>
-                                </div>
+                            <Col>
+                                <Stack gap={2}>
+                                    <LanguageSelector
+                                        type={SectionType.To}
+                                        value={toLanguage}
+                                        onChange={setToLanguage}
+                                    />
+                                    <div style={{ position: 'relative' }}>
+                                        <TextArea
+                                            loading={loading}
+                                            type={SectionType.To}
+                                            value={result}
+                                            onChange={setResult}
+                                        />
+                                        <div style={{ position: 'absolute', left: 0, bottom: 0, display: 'flex' }}>
+                                            <Button
+                                                variant='link'
+                                                onClick={handleClipboard}>
+                                                <ClipboardIcon />
+                                            </Button>
+                                            <Button
+                                                variant='link'
+                                                onClick={handleSpeak}>
+                                                <SpeakerIcon />
+                                            </Button>
+                                        </div>
 
-                            </div>
-                        </Stack>
-                    </Col>
-                </Row>
+                                    </div>
+                                </Stack>
+                            </Col>
+                        </Row>
 
-            </Container>
+                    </div>
 
+                </Container>
+
+            </div>
         </div>
     )
 }

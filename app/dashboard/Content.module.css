@@ -1,0 +1,17 @@
+/* app/dashboard/Content.module.css */
+
+.content {
+    display: flex;               /* Permite el uso de flexbox */
+    justify-content: center;     /* Centra horizontalmente el contenido */
+    align-items: center;         /* Centra verticalmente el contenido */
+    width: 80vw;                 /* Ancho del 80% de la ventana */
+    max-width: 900px;           /* Ancho máximo para el contenedor */
+    height: 80vh;                /* Altura del 80% de la ventana */
+    max-height: 600px;          /* Altura máxima para el contenedor */
+    margin: auto;               /* Centra el contenedor en la pantalla */
+    border-radius: 16px;        /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #ffffff;  /* Color de fondo blanco */
+    padding: 20px;              /* Espacio interno */
+    overflow-y: auto;           /* Permite desplazamiento vertical si el contenido es grande */
+}

@@ -1,0 +1,21 @@
+/* app/dashboard/TvContainer.module.css */
+.tvContainer {
+    display: flex;               /* Usar flexbox para permitir distribución adecuada */
+    justify-content: flex-start; /* Alinear contenido a la izquierda */
+    align-items: stretch;        /* Alinear a la altura completa del contenedor */
+    width: 80vw;                 /* Ancho del contenedor */
+    height: 80vh;                /* Alto del contenedor */
+    background-color: #fff;      /* Fondo blanco para visualizar el contenido */
+    border-radius: 20px;         /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para efecto de "televisor" */
+    margin: 70px auto;           /* Centrar el contenedor en la pantalla */
+    overflow: hidden;            /* Oculta el contenido que se desborda */
+    /* padding-top: 20px; */
+}
+
+/* Asegúrate de que las imágenes dentro de tvContainer se ajusten correctamente */
+.tvContainer img {
+    max-width: 100%;            /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto;               /* Mantiene la proporción de la imagen */
+    object-fit: cover;          /* Asegura que la imagen cubra el contenedor sin deformarse */
+}

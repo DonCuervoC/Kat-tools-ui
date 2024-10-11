@@ -4,9 +4,10 @@
 import React, { useState } from 'react';
 import styles from '@/app/dashboard/qrcode/Qrcode.module.css';
 import Sidebar from '../Sidebar';
-import Content from '../Content';
+// import Content from '../Content';
 import { rubik } from '@/ui/fonts'; // Import fonts
 import QrCodeGenerator from '@/app/components/qrcode/QrCodeGenerator'; // Ensure correct import
+import TvContainer from '@/app/components/tveffect/TvContainer';
 
 const Qrcode: React.FC = () => {
   const [myFormType, setMyFormType] = useState<'url' | 'other' | null>(null);
@@ -81,11 +82,20 @@ const Qrcode: React.FC = () => {
   return (
     <div className={`${rubik.className}`}>
       <div style={{ display: 'flex' }}>
+      <TvContainer>
         <Sidebar />
-        <Content>
+        {/* <Content> */}
           {!isQrCodeVisible && !isFormActive && (
             <div className={styles.Container}>
-              <h1 className={styles.Title}>Select an Option</h1>
+            <div >
+              <h1 className={styles.Title}><strong>Generate your own QR code</strong></h1>
+                <p>
+                  <strong>1. Enter URL:</strong> By selecting this option, you can generate a QR code that stores a website link of your choice. This QR code can be scanned by any device with QR code reading capabilities, directing the user to the specified website.
+                  </p>
+                  <p>
+                  <strong>2. Other Data:</strong> This option allows you to input important information like product prices, article details, or any other relevant data. The generated QR code will store this information and make it accessible by scanning the code with any compatible device.
+                  </p>
+                  <br></br>
               <div className={styles.Options}>
                 <button className={styles.OptionButton} onClick={() => handleOptionSelect('url')}>
                   Enter URL
@@ -95,11 +105,13 @@ const Qrcode: React.FC = () => {
                 </button>
               </div>
             </div>
+            </div>
           )}
 
           {myFormType === 'url' && isFormActive && !isQrCodeVisible && (
             <div className={styles.Container}>
-              <h2 className={styles.Title}>Enter your URL here</h2>
+            <div>
+              <h2 className={styles.Title}><strong>Enter your URL here</strong></h2>
               <input
                 type="url"
                 required
@@ -111,10 +123,12 @@ const Qrcode: React.FC = () => {
               <button className={styles.SubmitButton} onClick={handleSubmitUrl}>Submit</button>
               <button className={styles.CloseButton} onClick={handleClose}>Close</button>
             </div>
+            </div>
           )}
 
           {myFormType === 'other' && isFormActive && !isQrCodeVisible && (
             <div className={styles.Container}>
+            <div >
               <h2 className={styles.Title}><strong>Enter your data</strong></h2>
               <p className={styles.Description}>
                 A <strong>label</strong> is a name, and the <strong>detail</strong> is the information that goes with it.
@@ -154,12 +168,15 @@ const Qrcode: React.FC = () => {
               <button className={styles.CloseButton} onClick={handleClose}>Close</button>
               <button className={styles.SubmitButton} onClick={handleSubmitOther}>Submit</button>
             </div>
+            </div>
           )}
 
           {isQrCodeVisible && qrCodeData && (
             <QrCodeGenerator value={qrCodeData} onClose={handleGoBack} />
           )}
-        </Content>
+        {/* </Content> */}
+
+        </TvContainer>
       </div>
     </div>
   );

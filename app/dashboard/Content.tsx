@@ -1,14 +1,13 @@
 // app/dashboard/Content.tsx
 import { ReactNode } from 'react';
-import styles from './Dashboard.module.css';
+// import styles from './Content.module.css'; // Importa el módulo de estilos
 
 interface ContentProps {
   children: ReactNode;
 }
 
 const Content = ({ children }: ContentProps) => {
-  return <div className={styles.content}>{children}</div>;
+  return <div >{children}</div>; // Aplica la clase de estilos
 };
 
 export default Content;
-
