@@ -1,16 +1,19 @@
-// app/components/HomeComponent.tsx
-
 'use client'; // Si necesitas que sea un componente del lado del cliente
 import { useState } from 'react';
-import Link from 'next/link';
 import styles from './HomeComponent.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 
-const HomeComponent = () => {
+const HomeVisitorsComponent = () => {
   const [isFormVisible, setFormVisible] = useState(false);
   const [activeButton, setActiveButton] = useState<'collaborate' | 'anonymous' | null>(null);
-
+  const [errorMessage, setErrorMessage] = useState('');
+  const [formData, setFormData] = useState({
+    companyName: '',
+    name: '',
+    email: '',
+  });
+  const [loading, setLoading] = useState(false); // Nuevo estado para manejar carga
 
   const handleCollaborateClick = () => {
     setFormVisible(true);
@@ -19,17 +22,53 @@ const HomeComponent = () => {
 
   const handleAnonymousClick = () => {
     setActiveButton('anonymous');
+    handleSubmitAnonymous(); // Llama directamente aquí
   };
 
   const handleCloseForm = () => {
     setFormVisible(false);
     setActiveButton(null);
+    setErrorMessage('');
+    setFormData({ companyName: '', name: '', email: '' }); // Resetea el formulario
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Lógica de envío de formulario
-    window.location.href = '/dashboard';
+    await submitForm(activeButton === 'collaborate' ? 'registered' : 'anonymous');
+  };
+
+  const handleSubmitAnonymous = async () => {
+    await submitForm('anonymous');
+  };
+
+  const submitForm = async (type: 'registered' | 'anonymous') => {
+    setLoading(true); // Activa el estado de carga
+    try {
+      const response = await fetch('/api/visitors', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, type }),
+      });
+
+      if (response.ok) {
+        window.location.href = '/dashboard';
+      } else {
+        const errorData = await response.json();
+        setErrorMessage(errorData.message || 'An error occurred. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setErrorMessage('An error occurred. Please try again later.');
+    } finally {
+      setLoading(false); // Desactiva el estado de carga
+    }
   };
 
   return (
@@ -94,26 +133,52 @@ const HomeComponent = () => {
       >
         I want to collaborate
       </button>
-      <Link href="/dashboard">
-        <button
-          onClick={handleAnonymousClick}
-          className={`${styles.button} ${activeButton === 'anonymous' ? styles.active : ''}`}
-        >
-          Enter Anonymously
-        </button>
-      </Link>
+      <button
+        onClick={handleAnonymousClick}
+        className={`${styles.button} ${activeButton === 'anonymous' ? styles.active : ''}`}
+        disabled={loading} // Desactiva si está cargando
+      >
+        {loading ? 'Loading...' : 'Enter Anonymously'}
+      </button>
 
       {isFormVisible && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
             <span className={`${styles.close} ${styles.closeButton}`} onClick={handleCloseForm}>&times;</span>
             <h2>Collaboration Form</h2>
+            {errorMessage && <p className={styles.error}>{errorMessage}</p>}
             <form onSubmit={handleSubmit} className={styles.form}>
-              <input type="text" placeholder="Company Name" className={styles.input} required />
-              <input type="text" placeholder="Your Name" className={styles.input} required />
-              <input type="email" placeholder="Email" className={styles.input} required />
+              <input
+                type="text"
+                name="companyName"
+                placeholder="Company Name"
+                className={styles.input}
+                value={formData.companyName}
+                onChange={handleInputChange}
+                required
+              />
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className={styles.input}
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className={styles.input}
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
               <div className={styles.buttonContainer}>
-                <button type="submit" className={`${styles.button} ${styles.submitButton}`}>Submit</button>
+                <button type="submit" className={`${styles.button} ${styles.submitButton}`} disabled={loading}>
+                  {loading ? 'Submitting...' : 'Submit'}
+                </button>
                 <button type="button" onClick={handleCloseForm} className={`${styles.button} ${styles.submitButton}`}>Back</button>
               </div>
             </form>
@@ -124,4 +189,4 @@ const HomeComponent = () => {
   );
 };
 
-export default HomeComponent;
+export default HomeVisitorsComponent;

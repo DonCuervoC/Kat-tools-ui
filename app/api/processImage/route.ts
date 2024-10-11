@@ -7,10 +7,7 @@ import { createWorker } from "tesseract.js"; // Importamos Tesseract.js
 
 export const POST = async (req: Request) => {
 
-
   const formData = await req.formData();
-
-
 
   const language = formData.get("language") as string;
 
