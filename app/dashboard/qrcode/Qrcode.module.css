@@ -1,8 +1,9 @@
 .Container {
-    padding: 20px; /* Space inside the container */
-    background-color: #ffffff; /* White background for the container */
-    border-radius: 8px; /* Rounded corners for a smooth appearance */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px;  /* Espacio dentro del contenedor */
+    background-color: #ffffff;  /* Fondo blanco para el contenedor */
+    border-radius: 8px;  /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+    margin-left: 14px;  /* Separación con el componente de la izquierda */
 }
 
 .Title {

@@ -1,5 +1,15 @@
 /* components/QrCode/QrCodeGenerator.module.css */
 
+/* .qrCodeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
 .qrCodeContainer {
     display: flex;
     flex-direction: column;
@@ -8,7 +18,11 @@
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    border-color: #d5721e;
+    width: 95%; /* Set to 95% to occupy most of the available width */
+    margin: 0 auto; /* Center the container */
+  }
+  
 
 .input {
     width: 100%;

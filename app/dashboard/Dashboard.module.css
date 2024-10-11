@@ -1,68 +1,82 @@
-/* Estilos para la barra lateral */
 .sidebar {
-    position: relative; /* Asegúrate de que la posición sea relativa para el div interno */
+    position: relative;
     width: 250px;
     height: 100vh;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s; /* Transición suave para el fondo */
-  
+    transition: background-color 0.3s;
 }
 
-/* Nuevo estilo para la imagen de fondo */
 .backgroundImage {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/cats/wllppr-tools02.jpg'); /* Ruta de la imagen */
-    background-size: cover; /* Asegura que la imagen cubra todo el div */
-    background-position: center; /* Centra la imagen */
-    opacity: 0.025; /* Opacidad del 90% */
-    z-index: 0; /* Mantiene la imagen detrás del contenido */
+    background-image: url('/cats/wllppr-tools02.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.025;
+    z-index: 0;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-    position: relative; /* Asegúrate de que el contenido esté en la parte superior */
-    z-index: 1; /* Mantiene el contenido por encima de la imagen de fondo */
+    position: relative;
+    z-index: 1;
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+    margin-bottom: 1px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0.85); 
 }
 
+/* Estilo para los enlaces */
 .sidebar ul li a {
     color: #000000; /* Color de texto */
     text-decoration: none;
     font-size: 18px;
     display: block; /* Esto asegura que los enlaces ocupen todo el área */
-    padding: 10px; /* Espaciado dentro del botón */
+    padding: 10px 25px;  /* Espaciado: 10px arriba y abajo, 25px a la izquierda y derecha */
     border: 2px solid #d3d3d3; /* Borde gris claro inicial para los botones */
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 20px; /* Bordes más redondeados */
     transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Suavizar la transición del color del borde */
+    text-transform: capitalize; /* Asegura que el texto comience en mayúscula */
 }
+
 
 /* Efecto hover para los botones */
 .sidebar ul li a:hover {
-    background-color: #e0e0e0; /* Fondo más claro al pasar el mouse */
-    color: #f6821f; /* Color de texto más oscuro al pasar el mouse */
-    border-color: #f6821f; /* Cambiar el borde a anaranjado en hover */
+    background-color: #e0e0e0;
+    color: #f6821f;
+    border-color: #f6821f;
+}
+
+/* Efecto floating dock */
+.navItem {
+    /* transform: scale(1);
+    opacity: 1; */
+    transform: scale(1); /* Mantener el tamaño reducido en un 25% */
+    opacity: 1;
+}
+
+.navItem:hover { /* Aumentar el tamaño del elemento al pasar el mouse */
+    /* transform: scale(1.2);  */
+    transform: scale(1.01);
+}
+
+.neighbor { /* Aumentar ligeramente los vecinos */
+    /* transform: scale(1.1);  */
+    transform: scale(1);
+    opacity: 0.85;
 }
 
 /* Estilo para el botón activo */
-.sidebar ul li a.active {
-    background-color: #000000; /* Fondo negro para el botón activo */
-    color: #ffffff; /* Texto blanco para el botón activo */
-    border-color: #f6821f /* Cambiar el borde a negro cuando el botón está activo */
-}
-/* Estilos para el contenido dinámico */
-.content {
-    padding: 20px;
-    flex: 1;
-    background-color: #fff; /* Fondo blanco para el contenido */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+.activeLink {
+    transform: scale(1.15);
+    background-color: #000000 !important; /* Fondo negro */
+    color: #ffffff !important; /* Texto blanco */
+    border-color: #f6821f !important; /* Borde anaranjado */
 }

@@ -1,10 +1,12 @@
 import { Container, Spinner } from 'react-bootstrap'
 import Image from 'next/image';
 import React from 'react'
+// import TvEffect from './tveffect/TvEffect';
 
 export default function BuildingPage() {
     return (
         <Container fluid className="d-flex flex-column align-items-center justify-content vh-100">
+            {/* <TvEffect timeMs={400}> */}
             <Spinner animation="grow" />
             <br></br>
             <Image
@@ -15,6 +17,8 @@ export default function BuildingPage() {
             />
             <br></br>
             <h2>Cat work in progress...</h2>
+            {/* </TvEffect> */}
         </Container>
+
     )
 }
