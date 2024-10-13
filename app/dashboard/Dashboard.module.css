@@ -1,3 +1,8 @@
+.mainContainer {
+    display: flex;  /* Mantiene el sidebar fijo y el contenido al lado */
+    flex-wrap: nowrap; /* Evita que el contenido se mueva a otra línea */
+}
+
 .sidebar {
     position: relative;
     width: 250px;
@@ -39,7 +44,7 @@
     text-decoration: none;
     font-size: 18px;
     display: block; /* Esto asegura que los enlaces ocupen todo el área */
-    padding: 10px 25px;  /* Espaciado: 10px arriba y abajo, 25px a la izquierda y derecha */
+    padding: 10px 25px;  /* Espaciado: 10px arriba y abajo, 15px a la izquierda y derecha */
     border: 2px solid #d3d3d3; /* Borde gris claro inicial para los botones */
     border-radius: 20px; /* Bordes más redondeados */
     transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Suavizar la transición del color del borde */

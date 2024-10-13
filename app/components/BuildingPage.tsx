@@ -52,7 +52,7 @@ export default function BuildingPage() {
                     alt="Working in progress CAT"
                     style={{ maxWidth: '100%', height: 'auto', marginBottom: '10px' }} // Ajusta la imagen
                 />
-                <h2 style={{ textAlign: 'center' }}>Cat work in progress...</h2>
+                <h2 style={{ textAlign: 'center' }}>A cat is working about it...</h2>
             </div>
         </Container>
     );
