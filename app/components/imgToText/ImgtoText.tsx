@@ -251,7 +251,7 @@ export default function ImgToText() {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.Title}>OCR Image to Text</h1>
+            <h1 className={styles.Title}><strong>OCR Image to Text</strong></h1>
             <p>Upload an image <strong>(JPG/JPEG/PNG)</strong><br></br> with text and select the language.</p>
             <br />
             <label><strong>01.</strong> Upload your image:</label>

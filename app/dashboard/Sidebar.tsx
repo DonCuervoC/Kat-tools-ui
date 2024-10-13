@@ -13,6 +13,16 @@ const Sidebar = () => {
   const pathname = usePathname(); // Obtener la ruta actual
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Controlar el índice del <li> sobre el que está el hover
 
+
+  const navLinks = [
+    // '/dashboard',
+    '/dashboard/qrcode',
+    '/dashboard/imgtext',
+    '/dashboard/translator',
+    '/dashboard/contact',
+  ];
+
+
   return (
     <div className="mainContainer">
       <nav className={`${styles.sidebar} ${rubik.className}`}> {/* Aplica la fuente aquí */}
@@ -36,7 +46,8 @@ const Sidebar = () => {
         </div>
 
         <ul>
-          {['/dashboard', '/dashboard/qrcode', '/dashboard/imgtext', '/dashboard/translator'].map((path, index) => (
+          {/* {['/dashboard', '/dashboard/qrcode', '/dashboard/imgtext', '/dashboard/translator'].map((path, index) => ( */}
+          {navLinks.map((path, index) => (
             <li
               key={path}
               onMouseEnter={() => setHoveredIndex(index)} // Cambiar el índice cuando el mouse entra

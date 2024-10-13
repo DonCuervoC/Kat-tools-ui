@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 95%; /* Ajuste dinámico al 90% del ancho disponible */
+    max-width: 800px; /* Limita el tamaño máximo */
+    margin-top: 60px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+}
+
+/* Estilo para el acordeón */
+.accordionItemContainer {
+    width: 450px; /* Ancho fijo basado en el tamaño de "Contact information" */
+    max-width: 100%; /* Asegura que el ancho no exceda el contenedor principal */
+}
+/* Estilo para el título principal de la página de contacto */
+.Title {
+    /* font-size: 24px; */
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* ContactComponent.module.css */
+.socialLinks {
+    display: flex;
+    justify-content: center; /* Centra los enlaces horizontalmente */
+    gap: 20px; /* Espaciado entre los enlaces */
+    margin-top: 20px; /* Espacio por encima de los enlaces */
+}
+
+.socialLinks a {
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    color: #000000; /* Color de texto */
+    display: flex;
+    align-items: center; /* Alinea íconos y texto verticalmente */
+    transition: color 0.3s, transform 0.3s; /* Agrega transición para suavizar el cambio de color */
+}
+
+.socialLinks a:hover {
+    color: #d5721e; /* Cambia el color del texto a naranja al pasar el mouse */
+    transform: scale(1.1); /* Opcional: aumenta ligeramente el tamaño del ícono */
+}
+
+.socialLinks i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    transition: color 0.3s; /* Transición suave para el color del ícono */
+}
+
+.socialLinks a:hover i {
+    color: #d5721e; /* Cambia el color del ícono a naranja al pasar el mouse */
+}
