@@ -19,6 +19,7 @@ const Sidebar = () => {
     '/dashboard/qrcode',
     '/dashboard/imgtext',
     '/dashboard/translator',
+    '/dashboard/signature',
     '/dashboard/contact',
   ];
 

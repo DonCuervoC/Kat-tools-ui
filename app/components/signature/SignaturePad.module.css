@@ -1,0 +1,115 @@
+.container {
+    padding: 20px; /* Mantengo el padding */
+    background-color: transparent; /* Cambia a transparente */
+    border-radius: 8px; /* Mantén las esquinas redondeadas si lo deseas */
+    margin-top: 60px; /* Agrega un margen superior de 40px */
+    display: flex; /* Flexbox para la alineación */
+    flex-direction: column; /* Para que los elementos estén en una columna */
+    margin-left: 60px; /* Mantén la separación si es necesario */
+    margin-right: 60px;
+    max-width: 90%; /* Max-width para el contenedor */
+    margin: 60px auto; /* Centra el contenedor */
+}
+
+
+
+
+
+
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre los botones */
+    margin-top: 20px; /* Espacio por encima de los botones */
+}
+
+.button {
+    background: none; /* Sin fondo */
+    border: 2px solid #ccc; /* Borde sutil */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambiar cursor a mano */
+    padding: 11px; /* Aumentar espaciado interno en un 10% */
+    position: relative; /* Posicionamiento para el tooltip */
+    transition: color 0.3s, box-shadow 0.3s, border-color 0.3s; /* Transición suave para el color y sombra */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.button:hover {
+    border-color: #000000 /* Cambiar color del borde en hover */
+}
+
+.downloadHover {
+    color: #62bb47; /* Color verde en hover */
+}
+
+.undoHover {
+    color: #f6821f; /* Color naranja en hover */
+}
+
+.deleteHover {
+    color: #e03a3c /* Color rojo en hover */
+}
+
+
+.Title {
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5rem; /* Tamaño por defecto */
+}
+
+.paragraph {
+    text-align: center; /* Alinear el párrafo al centro */
+    font-size: 1.2rem; /* Tamaño por defecto */
+}
+
+
+
+.tooltip {
+    position: absolute;
+    bottom: 100%; /* Posicionar encima del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 12px; /* Tamaño de fuente */
+    white-space: nowrap; /* Evita el salto de línea */
+    z-index: 1; /* Asegura que el tooltip esté por encima de otros elementos */
+    margin-bottom: 5px; /* Espacio entre el tooltip y el botón */
+}
+
+
+/* Consultas de medios para reducir el tamaño de la fuente */
+@media (max-width: 1024px) {
+    .Title {
+        font-size: 2rem; /* Tamaño más pequeño para pantallas medianas */
+    }
+
+    .paragraph {
+        font-size: 1rem; /* Tamaño más pequeño para pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .Title {
+        font-size: 1.5rem; /* Tamaño aún más pequeño para pantallas pequeñas */
+    }
+
+    .paragraph {
+        font-size: 0.9rem; /* Tamaño aún más pequeño para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .Title {
+        font-size: 1.2rem; /* Tamaño mínimo para pantallas muy pequeñas */
+    }
+
+    .paragraph {
+        font-size: 0.8rem; /* Tamaño mínimo para pantallas muy pequeñas */
+    }
+}
+
