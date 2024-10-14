@@ -62,4 +62,23 @@
   .success {
     color:#62bb47; /* Color verde para mensajes de éxito */
   }
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .submitButton,
+  .resetButton {
+      padding: 8px 12px; /* Reduce el tamaño del padding */
+      font-size: 14px; /* Reduce el tamaño del texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .submitButton,
+  .resetButton {
+      padding: 6px 10px; /* Reduce aún más el tamaño del padding */
+      font-size: 12px; /* Reduce aún más el tamaño del texto */
+      margin-right: 5px; /* Reduce el espacio entre botones */
+  }
+}
+  
   

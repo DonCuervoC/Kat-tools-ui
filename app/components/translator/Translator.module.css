@@ -6,178 +6,159 @@
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-color: #d5721e;
   width: 95%; /* Set to 95% to occupy most of the available width */
-  margin:  0 auto; /* Center the container */
+  margin: 0 auto; /* Center the container */
 }
 
-
 .title {
-    font-size: 24px;
-    color: #000;
-    margin-bottom: 50px;
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 50px;
 }
 
 .languageSelection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .select {
-    width: 30%; /* Width adjustment */
-    padding: 8px; /* Adjusted padding */
-    margin: 0 10px; /* Space between selects and button */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    cursor: pointer;
-    text-align: center;
+  width: 30%; /* Width adjustment */
+  padding: 8px; /* Adjusted padding */
+  margin: 0 10px; /* Space between selects and button */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  text-align: center;
 }
 
 .button {
-    padding: 8px 16px; /* Adjusted padding */
-    background-color: #000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  padding: 8px 16px; /* Adjusted padding */
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #d5721e;
+  background-color: #d5721e;
 }
-
-
-
-/*  ******  */
-
 
 .textAreas {
-    display: flex; /* Establece el contenedor como un flexbox para alinear los text areas */
-    justify-content: space-between; /* Espacia los elementos dentro del contenedor */
-    gap: 20px; /* Espacio entre los text areas */
-    width: 100%; /* El contenedor ocupa el 100% del ancho disponible */
-    margin-top: 20px; /* Margen superior del contenedor */
+  display: flex; /* Establece el contenedor como un flexbox para alinear los text areas */
+  justify-content: space-between; /* Espacia los elementos dentro del contenedor */
+  gap: 20px; /* Espacio entre los text areas */
+  width: 100%; /* El contenedor ocupa el 100% del ancho disponible */
+  margin-top: 20px; /* Margen superior del contenedor */
 }
 
-/* Media query for small screens */
-/* Media query for small screens */
-@media (max-width: 768px) {
-    .textAreas {
-        flex-direction: column; /* Change layout to vertical */
-        gap: 10px; /* Space between text areas in column layout */
-    }
-    .textarea {
-        width: 100% !important; /* Force textarea to occupy 100% width */
-        margin: 0; /* Remove any margins */
-        box-sizing: border-box; /* Ensure padding and border are included in the width */
-    }
+.arrowsContainer {
+  width: 60px;
+  margin-left: -4%;
+  margin-right: -1%;
 }
-
-
-.textarea {
-    width: 48%; /* Each textarea occupies 48% width on larger screens */
-    height: 150px; /* Fixed height for text areas */
-    padding: 10px; /* Inner padding for textarea */
-    border: 1px solid #ccc; /* Border for textarea */
-    border-radius: 5px; /* Rounded corners for textarea */
-    background-color: #f8f8f8; /* Background color for textarea */
-    resize: none; /* Disable resizing of textarea */
-}
-
-
-
 
 /* Switch styles */
 .switchContainer {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
-  }
-  
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 28px;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 22px;
-    width: 22px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  
-  input:checked + .slider {
-    background-color: #d5721e;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(22px);
-  }
-  
-  .switchLabel {
-    margin-left: 10px;
-    font-size: 13px;
-  }
-
-
-  .loading {
-    margin-top: 20px;
-    font-size: 18px; /* Adjust as needed */
-    color: #555; /* Adjust color as needed */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #d5721e;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.switchLabel {
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+.loading {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #555;
+}
 
 .autoDetectMessage {
-    color: #d5721e; /* Color para el mensaje */
-    font-weight: bold; /* Negrita para resaltar el mensaje */
-    margin: 0 10px; /* Espaciado alrededor del mensaje */
-    font-size: x-small;
+  color: #d5721e;
+  font-weight: bold;
+  margin: 0 10px;
+  font-size: x-small;
 }
 
-
-
-
-  @media (max-width: 768px) {
-    .title {
-        font-size: 20px; /* Adjust title size */
-    }
-    .switchLabel {
-        font-size: 12px; /* Adjust switch label size */
-    }
-    .button {
-        padding: 6px 12px; /* Adjust button padding */
-    }
-    .select {
-        font-size: 12px; /* Adjust font size for selects */
-    }
+/* Consolidated Media Query */
+@media (max-width: 768px) {
+  .title {
+      font-size: 20px; /* Adjust title size */
+  }
+  .switchLabel {
+      font-size: 12px; /* Adjust switch label size */
+  }
+  .button {
+      padding: 6px 12px; /* Adjust button padding */
+  }
+  .select {
+      font-size: 12px; /* Adjust font size for selects */
+  }
+  .textAreas {
+      flex-direction: column; /* Change layout to vertical */
+      gap: 10px; /* Space between text areas in column layout */
+  }
+  .textarea {
+      width: 100% !important;
+      margin: 0;
+      box-sizing: border-box;
+  }
+  .arrowsContainer {
+      width: 30px;
+      margin-left: -10%;
+      margin-right: 4%;
+  }
 }

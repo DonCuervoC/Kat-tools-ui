@@ -7,6 +7,7 @@
 
     flex-direction: column; /* Para que los elementos estén en una columna */
     margin-left: 60px; /* Mantén la separación si es necesario */
+    margin-right: 60px;
 
 }
 

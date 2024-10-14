@@ -8,45 +8,54 @@ import CommentForm from './CommentForm';
 
 export default function ContactComponent() {
     return (
-        <div className={Styles.container}>
-            <h1 className={Styles.Title}><strong>Contact Page</strong></h1>
-            <Accordion defaultActiveKey="0" flush className={Styles.accordionItemContainer}>
-                <Accordion.Item eventKey="0" className={Styles.accordionItem}>
-                    <Accordion.Header>Contact information</Accordion.Header>
-                    <Accordion.Body>
+        <div>
+            {/* <div style={{ display: 'block', marginLeft: '120%', marginRight: 'auto', marginTop: '100px' }}>
+                <p>nelson nelson nelson</p>
+            </div> */}
+            <div className={Styles.container}>
+                <h1 className={Styles.Title}><strong>Contact Page</strong></h1>
 
-                        <Image
-                            width={130}
-                            height={170}
-                            src="/cats/cat40.png"
-                            alt="Cat contact"
-                            style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
-                        />
+                <Accordion defaultActiveKey="0" flush className={Styles.accordionItemContainer}>
 
-                        <div className={Styles.socialLinks}>
+                    <Accordion.Item eventKey="0" >
+                        <Accordion.Header
+                        >Contact information</Accordion.Header>
+                        <Accordion.Body>
 
-                            <a href="https://www.linkedin.com/in/nelson-cuervo" target="_blank" rel="noopener noreferrer">
-                                <i className="bi bi-linkedin"></i> LinkedIn
-                            </a>
-                            <a href="https://github.com/DonCuervoC" target="_blank" rel="noopener noreferrer">
-                                <i className="bi bi-github"></i> GitHub
-                            </a>
-                            <a href="mailto:nelson.cuervo89@gmail.com">
-                                <i className="bi bi-envelope"></i> Email
-                            </a>
+                            <Image
+                                width={130}
+                                height={170}
+                                src="/cats/cat40.png"
+                                alt="Cat contact"
+                                style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+                            />
+
+                            <div className={Styles.socialLinks}>
+
+                                <a href="https://www.linkedin.com/in/nelson-cuervo" target="_blank" rel="noopener noreferrer">
+                                    <i className="bi bi-linkedin"></i> LinkedIn
+                                </a>
+                                <a href="https://github.com/DonCuervoC" target="_blank" rel="noopener noreferrer">
+                                    <i className="bi bi-github"></i> GitHub
+                                </a>
+                                <a href="mailto:nelson.cuervo89@gmail.com">
+                                    <i className="bi bi-envelope"></i> Email
+                                </a>
+
+                            </div>
+                        </Accordion.Body>
+                    </Accordion.Item>
 
 
-                        </div>
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1" className={Styles.accordionItem}>
-                    <Accordion.Header>Leave comments</Accordion.Header>
-                    <Accordion.Body>
-                     
-                        <CommentForm/>
-                    </Accordion.Body>
-                </Accordion.Item>
-            </Accordion>
+                    <Accordion.Item eventKey="1" className={Styles.accordionItem}>
+                        <Accordion.Header>Leave comments</Accordion.Header>
+                        <Accordion.Body>
+                            <CommentForm />
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    
+                </Accordion>
+            </div>
         </div>
     );
 }

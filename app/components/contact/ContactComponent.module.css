@@ -1,24 +1,22 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 95%; /* Ajuste dinámico al 90% del ancho disponible */
-    max-width: 800px; /* Limita el tamaño máximo */
-    margin-top: 60px;
-    /* margin-left: 10px;
-    margin-right: 10px; */
-    margin-left: auto; /* Centra horizontalmente */
-    margin-right: auto; /* Centra horizontalmente */
+    padding: 20px; /* Mantengo el padding */
+    background-color: transparent; /* Cambia a transparente */
+    border-radius: 8px; /* Mantén las esquinas redondeadas si lo deseas */
+    margin-top: 60px; /* Agrega un margen superior de 40px */
+    display: flex; /* Flexbox para la alineación */
+
+    flex-direction: column; /* Para que los elementos estén en una columna */
+    margin-left: 60px; /* Mantén la separación si es necesario */
+    margin-right: 60px;
     
 }
 
 /* Estilo para el acordeón */
 .accordionItemContainer {
-    width: 450px; /* Ancho fijo basado en el tamaño de "Contact information" */
-    max-width: 100%; /* Asegura que el ancho no exceda el contenedor principal */
+    width: 700px; /* Ancho fijo basado en el tamaño de "Contact information" */
+    max-width: 90%; /* Asegura que el ancho no exceda el contenedor principal */
 }
+
 /* Estilo para el título principal de la página de contacto */
 .Title {
     /* font-size: 24px; */
@@ -54,4 +52,61 @@
 
 .socialLinks a:hover i {
     color: #d5721e; /* Cambia el color del ícono a naranja al pasar el mouse */
+}
+
+
+
+
+
+/* Media queries para pantallas más pequeñas */
+
+@media (max-width: 1050px) {
+    .container {
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 15px; /* Reduce el padding */
+    }
+
+    .accordionItemContainer {
+        width: 480px; /* Ocupa todo el ancho disponible */
+        max-width: 90%; /* Asegura que no haya límite de ancho */
+    }
+}
+
+
+/* @media (max-width: 768px) { */
+@media (max-width: 868px) {
+    .container {
+        margin-top: 20px;
+        margin-left: 3px;
+        margin-right: 20px;
+        padding: 15px; /* Reduce el padding */
+    }
+
+    .accordionItemContainer {
+        width: 310px; /* Ocupa todo el ancho disponible */
+        max-width: 90%; /* Asegura que no haya límite de ancho */
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: 10px;
+        margin-left: 1px;
+        margin-right: 10px;
+        padding: 7px; /* Reduce aún más el padding */
+    }
+
+    .accordionItemContainer {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        max-width: 100%; /* Asegura que no haya límite de ancho */
+    }
+
+    .socialLinks {
+        flex-direction: column; /* Coloca los enlaces en columna */
+        gap: 10px; /* Reduce el espacio entre los enlaces */
+    }
 }
