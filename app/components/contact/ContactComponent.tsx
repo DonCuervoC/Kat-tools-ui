@@ -4,6 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Styles from './ContactComponent.module.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Image from 'next/image';
+import CommentForm from './CommentForm';
 
 export default function ContactComponent() {
     return (
@@ -45,7 +46,8 @@ export default function ContactComponent() {
                 <Accordion.Item eventKey="1" className={Styles.accordionItem}>
                     <Accordion.Header>Leave comments</Accordion.Header>
                     <Accordion.Body>
-                        <p>Here goes a form component for comments</p>
+                     
+                        <CommentForm/>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

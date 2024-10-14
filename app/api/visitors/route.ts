@@ -21,19 +21,11 @@ const registerVisitor = async (data: VisitorFormData) => {
   const { companyName, name, email, type } = data;
 
   // Inserta los datos en la base de datos
-  /*
-const query = 
-`
-  INSERT INTO visitors (company_name, name, email, type, visit_date)
-  VALUES ($1, $2, $3, $4, NOW())
-`;
-const values = [companyName, name, email, type];
-*/
 
   const query = `
-INSERT INTO visitors (company_name, name, email, type, visit_date, from_app)
-VALUES ($1, $2, $3, $4, NOW(), $5)
-`;
+            INSERT INTO visitors (company_name, name, email, type, visit_date, from_app)
+            VALUES ($1, $2, $3, $4, NOW(), $5)
+            `;
   const values = [companyName, name, email, type, 'kat_tools'];
   await pool.query(query, values);
 };
