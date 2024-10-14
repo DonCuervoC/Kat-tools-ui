@@ -23,11 +23,7 @@ export default function ContactComponent() {
                             style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
                         />
 
-
-
                         <div className={Styles.socialLinks}>
-
-                            
 
                             <a href="https://www.linkedin.com/in/nelson-cuervo" target="_blank" rel="noopener noreferrer">
                                 <i className="bi bi-linkedin"></i> LinkedIn
