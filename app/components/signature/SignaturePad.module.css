@@ -7,14 +7,10 @@
     flex-direction: column; /* Para que los elementos estén en una columna */
     margin-left: 60px; /* Mantén la separación si es necesario */
     margin-right: 60px;
-    max-width: 90%; /* Max-width para el contenedor */
-    margin: 60px auto; /* Centra el contenedor */
+    margin-top: 5px;
+
+   /* margin: 60px auto;  Centra el contenedor */
 }
-
-
-
-
-
 
 
 .buttonContainer {
@@ -56,12 +52,12 @@
     color: #000000;
     margin-bottom: 20px;
     text-align: center;
-    font-size: 2.5rem; /* Tamaño por defecto */
+    font-size: 1.8rem; /* Tamaño por defecto */
 }
 
 .paragraph {
     text-align: center; /* Alinear el párrafo al centro */
-    font-size: 1.2rem; /* Tamaño por defecto */
+    font-size: 0.9rem; /* Tamaño por defecto */
 }
 
 

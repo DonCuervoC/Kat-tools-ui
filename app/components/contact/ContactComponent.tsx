@@ -13,13 +13,13 @@ export default function ContactComponent() {
                 <p>nelson nelson nelson</p>
             </div> */}
             <div className={Styles.container}>
-                <h1 className={Styles.Title}><strong>Contact Page</strong></h1>
-
+                {/* <h1 className={Styles.Title}><strong>Contact Page</strong></h1> */}
+                {/* <Accordion defaultActiveKey="0" flush className={Styles.accordionItemContainer}> */}
                 <Accordion defaultActiveKey="0" flush className={Styles.accordionItemContainer}>
 
                     <Accordion.Item eventKey="0" >
                         <Accordion.Header
-                        >Contact information</Accordion.Header>
+                        ><strong>Contact information</strong></Accordion.Header>
                         <Accordion.Body>
 
                             <Image
@@ -48,7 +48,7 @@ export default function ContactComponent() {
 
 
                     <Accordion.Item eventKey="1" className={Styles.accordionItem}>
-                        <Accordion.Header>Leave comments</Accordion.Header>
+                        <Accordion.Header><strong>Leave comments</strong></Accordion.Header>
                         <Accordion.Body>
                             <CommentForm />
                         </Accordion.Body>

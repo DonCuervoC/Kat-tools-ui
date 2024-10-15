@@ -1,31 +1,59 @@
 /* CommentForm.module.css */
 
+.container {
+  padding: 20px; /* Mantengo el padding */
+  background-color: transparent; /* Cambia a transparente */
+  border-radius: 8px; /* Mantén las esquinas redondeadas si lo deseas */
+  display: flex; /* Flexbox para la alineación */
+  flex-direction: column; /* Para que los elementos estén en una columna */
+  margin-left: 60px; /* Mantén la separación si es necesario */
+  margin-right: 60px;
+  flex-grow: 1; /* Permite que el contenedor crezca para ocupar el espacio disponible */
+  min-height: 0; /* Asegura que el contenedor no colapse */
+  height: 85%; /* Ajusta el contenedor al 100% del tamaño vertical del padre */
+}
+
+
 .form {
     /* Estilos para el formulario */
     max-width: 400px;
-    margin: auto;
+    max-height: 85%;
+    /* margin: auto; */
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
   }
   
   .formGroup {
-    margin-bottom: 15px;
+   
+    margin-bottom: 1%;
   }
   
   .label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
+ 
+    font-size: 1rem; /* Tamaño por defecto */
   }
   
-  .input,
+  .input{
+      width: 100%;
+      height: 33px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+
   .textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .textarea {
     height: 100px; /* Ajusta la altura según sea necesario */
   }
+  
+
   
   .submitButton{
     background-color: #009ddc; /* Color de fondo azul */
@@ -63,8 +91,37 @@
     color:#62bb47; /* Color verde para mensajes de éxito */
   }
 
+  .textos{
+    font-size: 1.8rem; /* Tamaño por defecto */
+  }
+
+
+  @media (max-width: 600px) {
+
+    .input{
+
+      height: 75;
+  }
+
+  .textarea {
+
+    height: 75; /* Ajusta la altura según sea necesario */
+  }
+  
+    
+
+    .submitButton,
+    .resetButton {
+        padding: 8px 12px; /* Reduce el tamaño del padding */
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+  }
+
+  
+
 /* Media queries para pantallas más pequeñas */
 @media (max-width: 768px) {
+
   .submitButton,
   .resetButton {
       padding: 8px 12px; /* Reduce el tamaño del padding */

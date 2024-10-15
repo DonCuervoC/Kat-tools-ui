@@ -2,19 +2,22 @@
     padding: 20px; /* Mantengo el padding */
     background-color: transparent; /* Cambia a transparente */
     border-radius: 8px; /* Mantén las esquinas redondeadas si lo deseas */
-    margin-top: 60px; /* Agrega un margen superior de 40px */
+    margin-top: 10px; /* Agrega un margen superior */
     display: flex; /* Flexbox para la alineación */
-
     flex-direction: column; /* Para que los elementos estén en una columna */
     margin-left: 60px; /* Mantén la separación si es necesario */
     margin-right: 60px;
-    
+    flex-grow: 1; /* Permite que el contenedor crezca para ocupar el espacio disponible */
+    min-height: 0; /* Asegura que el contenedor no colapse */
+    height: 100%; /* Ajusta el contenedor al 100% del tamaño vertical del padre */
 }
+
 
 /* Estilo para el acordeón */
 .accordionItemContainer {
     width: 700px; /* Ancho fijo basado en el tamaño de "Contact information" */
     max-width: 90%; /* Asegura que el ancho no exceda el contenedor principal */
+    height: 90%;
 }
 
 /* Estilo para el título principal de la página de contacto */
@@ -23,6 +26,7 @@
     color: #000000;
     margin-bottom: 20px;
     text-align: center;
+    font-size: 1.8rem; /* Tamaño por defecto */
 }
 /* ContactComponent.module.css */
 .socialLinks {
@@ -56,8 +60,6 @@
 
 
 
-
-
 /* Media queries para pantallas más pequeñas */
 
 @media (max-width: 1050px) {
@@ -78,7 +80,7 @@
 /* @media (max-width: 768px) { */
 @media (max-width: 868px) {
     .container {
-        margin-top: 20px;
+        margin-top: 10px;
         margin-left: 3px;
         margin-right: 20px;
         padding: 15px; /* Reduce el padding */
@@ -94,7 +96,7 @@
 
 @media (max-width: 480px) {
     .container {
-        margin-top: 10px;
+        margin-top: 8px;
         margin-left: 1px;
         margin-right: 10px;
         padding: 7px; /* Reduce aún más el padding */

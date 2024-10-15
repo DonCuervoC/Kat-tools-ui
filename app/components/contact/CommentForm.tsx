@@ -71,8 +71,9 @@ const CommentForm: React.FC = () => {
 
   return (
     <>
+    <div className={Styles.container}>
       <form onSubmit={handleSubmit} className={Styles.form}>
-        <h2>Leave Your Comment</h2>
+        <h2 style={{fontSize:"150%"}}><strong>Leave your Comment</strong></h2>
         {error && <p className={Styles.error}>{error}</p>}
         {successMessage && <p className={Styles.success}>{successMessage}</p>}
 
@@ -130,6 +131,7 @@ const CommentForm: React.FC = () => {
           Reset
         </button>
       </form>
+      </div>
 
       {showPopup && (
         <Popup message="Thank you for your comments!" onClose={closePopup} />
