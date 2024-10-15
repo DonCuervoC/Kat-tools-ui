@@ -101,7 +101,7 @@ const SignaturePad: React.FC = () => {
     };
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container}  >
             <Image
                 width={100}
                 height={140}

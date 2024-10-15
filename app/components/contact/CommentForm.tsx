@@ -73,7 +73,7 @@ const CommentForm: React.FC = () => {
     <>
     <div className={Styles.container}>
       <form onSubmit={handleSubmit} className={Styles.form}>
-        <h2 style={{fontSize:"150%"}}><strong>Leave your Comment</strong></h2>
+        {/* <h2 style={{fontSize:"150%"}}><strong>Leave your comment</strong></h2> */}
         {error && <p className={Styles.error}>{error}</p>}
         {successMessage && <p className={Styles.success}>{successMessage}</p>}
 
@@ -125,7 +125,7 @@ const CommentForm: React.FC = () => {
         </div>
 
         <button type="submit" className={Styles.submitButton}>
-          Send Comment
+          Send
         </button>
         <button type="button" onClick={resetForm} className={Styles.resetButton}>
           Reset

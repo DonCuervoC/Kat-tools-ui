@@ -89,7 +89,8 @@ export default function TranslatorAi() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         padding: '5px' ,
-                        marginTop: '60px' ,
+                        marginTop: '3%' ,
+
                         // marginBottom: '10px',
                         textAlign: 'center'
                     }}>
@@ -102,6 +103,13 @@ export default function TranslatorAi() {
                         <h2 className={styles.title}><strong>Michi Translate</strong>
                         <br></br>Powered by AI
                         </h2>
+
+
+
+                          <p>
+                          Your feline friend and Ai bring the wonders of language to life.<br/> 
+                          It’s quick and easy, so relax and let Michi work his magic!
+                          </p>
                         
                     </div>
 

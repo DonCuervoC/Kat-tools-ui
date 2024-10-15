@@ -1,39 +1,36 @@
 /* CommentForm.module.css */
 
 .container {
-  padding: 20px; /* Mantengo el padding */
-  background-color: transparent; /* Cambia a transparente */
-  border-radius: 8px; /* Mantén las esquinas redondeadas si lo deseas */
-  display: flex; /* Flexbox para la alineación */
-  flex-direction: column; /* Para que los elementos estén en una columna */
-  margin-left: 60px; /* Mantén la separación si es necesario */
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
   margin-right: 60px;
-  flex-grow: 1; /* Permite que el contenedor crezca para ocupar el espacio disponible */
-  min-height: 0; /* Asegura que el contenedor no colapse */
-  height: 85%; /* Ajusta el contenedor al 100% del tamaño vertical del padre */
+  flex-grow: 1;
+  min-height: 0;
+  height: 85%;
+  overflow-y: auto; /* Permitir desplazamiento vertical */
 }
 
 
+
 .form {
-    /* Estilos para el formulario */
-    max-width: 400px;
-    max-height: 85%;
-    /* margin: auto; */
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
+  max-width: 400px;
+  width: 100%; /* Ajustar al ancho del contenedor */
+  max-height: 80vh; /* Limitar la altura para pantallas pequeñas */
+  overflow-y: auto; /* Desplazamiento si el contenido excede el contenedor */
+  padding: 10px;
+}
   
   .formGroup {
-   
-    margin-bottom: 1%;
+    margin-bottom: 3%;
   }
   
   .label {
     display: block;
     margin-bottom: 1px;
- 
     font-size: 1rem; /* Tamaño por defecto */
   }
   
@@ -96,31 +93,40 @@
   }
 
 
-  @media (max-width: 600px) {
-
-    .input{
-
-      height: 75;
-  }
-
-  .textarea {
-
-    height: 75; /* Ajusta la altura según sea necesario */
-  }
-  
-    
-
-    .submitButton,
-    .resetButton {
-        padding: 8px 12px; /* Reduce el tamaño del padding */
-        font-size: 14px; /* Reduce el tamaño del texto */
-    }
-  }
 
   
 
 /* Media queries para pantallas más pequeñas */
 @media (max-width: 768px) {
+
+  .container {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .form {
+    max-width: 300px;
+    max-height: 70vh; /* Reducir la altura en pantallas más pequeñas */
+  }
+
+  .submitButton,
+  .resetButton {
+      padding: 8px 12px; /* Reduce el tamaño del padding */
+      font-size: 14px; /* Reduce el tamaño del texto */
+  }
+}
+
+@media (max-width: 600px) {
+
+  .input{
+
+    height: 75;
+}
+
+.textarea {
+
+  height: 75; /* Ajusta la altura según sea necesario */
+}
 
   .submitButton,
   .resetButton {

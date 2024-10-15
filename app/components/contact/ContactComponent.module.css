@@ -10,6 +10,9 @@
     flex-grow: 1; /* Permite que el contenedor crezca para ocupar el espacio disponible */
     min-height: 0; /* Asegura que el contenedor no colapse */
     height: 100%; /* Ajusta el contenedor al 100% del tamaño vertical del padre */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: flex-start; /* Alinea los elementos en la parte superior */
+
 }
 
 
@@ -59,22 +62,12 @@
 }
 
 
-
-/* Media queries para pantallas más pequeñas */
-
-@media (max-width: 1050px) {
+@media (min-width: 1600px) {
     .container {
-        margin-top: 20px;
-        margin-left: 10px;
-        margin-right: 10px;
-        padding: 15px; /* Reduce el padding */
-    }
-
-    .accordionItemContainer {
-        width: 480px; /* Ocupa todo el ancho disponible */
-        max-width: 90%; /* Asegura que no haya límite de ancho */
+        margin-top: 50px; /* Ajusta el margen superior según sea necesario */
     }
 }
+
 
 
 /* @media (max-width: 768px) { */

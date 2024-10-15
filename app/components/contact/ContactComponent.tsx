@@ -48,7 +48,7 @@ export default function ContactComponent() {
 
 
                     <Accordion.Item eventKey="1" className={Styles.accordionItem}>
-                        <Accordion.Header><strong>Leave comments</strong></Accordion.Header>
+                        <Accordion.Header><strong>Leave your comment</strong></Accordion.Header>
                         <Accordion.Body>
                             <CommentForm />
                         </Accordion.Body>

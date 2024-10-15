@@ -5,10 +5,10 @@
     margin-top: 60px; /* Agrega un margen superior de 40px */
     display: flex; /* Flexbox para la alineación */
     flex-direction: column; /* Para que los elementos estén en una columna */
-    margin-left: 60px; /* Mantén la separación si es necesario */
-    margin-right: 60px;
+    margin-left: 19%; /* Mantén la separación si es necesario */
+    margin-right: 40px;
     margin-top: 5px;
-
+    
    /* margin: 60px auto;  Centra el contenedor */
 }
 
