@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Office tools",
+  title: "Office tools(cat)",
   description: "Kit with office tools to make the job easier",
 };
 
