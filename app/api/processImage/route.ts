@@ -290,7 +290,7 @@ export const POST = async (req: Request) => {
   const file = formData.get("image") as File;
 
   if (!file) {
-    return NextResponse.json({ error: "No se recibieron archivos." }, { status: 400 });
+    return NextResponse.json({ error: "No document was received" }, { status: 400 });
   }
 
   const buffer = Buffer.from(await file.arrayBuffer());
@@ -309,14 +309,19 @@ export const POST = async (req: Request) => {
     }),
   });
 
+  
+
   const result = await response.json();
+
+  console.log("OCR API Response:", result); 
   
   // Verificar si se obtuvo texto correctamente
   if (result.ParsedResults && result.ParsedResults.length > 0) {
     const extractedText = result.ParsedResults[0].ParsedText;
     return NextResponse.json({ message: "Success", extractedText });
   } else {
-    return NextResponse.json({ message: "Fallido al extraer texto", status: 500 });
+    console.error("Error in OCR Parsing:", result);
+    return NextResponse.json({ message: "Error extracting text", status: 500 });
   }
 };
 
