@@ -26,7 +26,7 @@
 }
 
 .select {
-    width: 40%;
+    width: 20%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -88,10 +88,19 @@
     resize: none;
 }
 
-.Title {
+.title {
     font-size: 24px;
     color: #000000;
     margin-bottom: 20px;
+}
+
+.description {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.5;
+    word-spacing: 0.1em;
+    margin-bottom: 20px; /* Espaciado entre la descripción y el input */
 }
 
 .error {
@@ -117,15 +126,9 @@
     font-size: 1.5rem;
     font-weight: bold;
     animation: fadeIn 0.5s;
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.loadingButton {
+    background-color: #f3a6a6;
+    cursor: not-allowed;
 }

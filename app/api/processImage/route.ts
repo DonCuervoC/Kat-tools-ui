@@ -309,7 +309,10 @@ export const POST = async (req: Request) => {
     }),
   });
 
-  
+  if (!response.ok) {
+    console.log(response)
+    throw new Error('An error occurred while processing the image');
+}
 
   const result = await response.json();
 
