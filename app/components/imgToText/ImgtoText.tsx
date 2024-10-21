@@ -277,7 +277,8 @@ export default function ImgToText() {
             <label><strong>02.</strong> Select Language:</label>
             <select className={styles.select} value={language} onChange={handleLanguageChange}>
                 <option value="eng">English</option>
-                <option value="fra">French</option>
+                {/* <option value="fra">French</option> */}
+                <option value="fre">French</option> 
                 <option value="spa">Spanish</option>
             </select>
             <button onClick={handleSubmit} className={styles.button}>Submit</button>

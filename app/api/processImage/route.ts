@@ -228,9 +228,10 @@ export const POST = async (req: Request) => {
 
 
 
-
+/*
 import { NextResponse } from "next/server";
-import { createWorker } from "tesseract.js"; // Importamos Tesseract.js
+// import { createWorker } from "tesseract.js"; // Importamos Tesseract.js
+import Tesseract from "tesseract.js";
 
 export const POST = async (req: Request) => {
   const formData = await req.formData();
@@ -254,7 +255,9 @@ export const POST = async (req: Request) => {
 
   try {
     // Crea un worker de Tesseract.js
-    const worker = await createWorker();
+    // const worker = await createWorker();
+    const worker = await Tesseract.createWorker();
+
     
     // Cargar y preparar el worker
     await worker.load();
@@ -274,6 +277,51 @@ export const POST = async (req: Request) => {
     return NextResponse.json({ message: "Fallido", status: 500 });
   }
 };
+*/
+
+
+import { NextResponse } from "next/server";
+
+const OCR_SPACE_API = process.env.OCR_SPACE_API;
+
+export const POST = async (req: Request) => {
+  const formData = await req.formData();
+  const language = formData.get("language") as string;
+  const file = formData.get("image") as File;
+
+  if (!file) {
+    return NextResponse.json({ error: "No se recibieron archivos." }, { status: 400 });
+  }
+
+  const buffer = Buffer.from(await file.arrayBuffer());
+  const mimeType = file.type; // Detectar el tipo MIME de la imagen
+
+  // Crear un objeto Headers
+  const headers = new Headers();
+  headers.append("apikey", OCR_SPACE_API || "");
+
+  const response = await fetch("https://api.ocr.space/parse/image", {
+    method: "POST",
+    headers: headers,
+    body: new URLSearchParams({
+      base64Image: `data:${mimeType};base64,${buffer.toString("base64")}`,
+      language: language,
+    }),
+  });
+
+  const result = await response.json();
+  
+  // Verificar si se obtuvo texto correctamente
+  if (result.ParsedResults && result.ParsedResults.length > 0) {
+    const extractedText = result.ParsedResults[0].ParsedText;
+    return NextResponse.json({ message: "Success", extractedText });
+  } else {
+    return NextResponse.json({ message: "Fallido al extraer texto", status: 500 });
+  }
+};
+
+
+
 
 
 
