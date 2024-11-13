@@ -42,6 +42,10 @@ export default function ContactComponent() {
                                     <i className="bi bi-envelope"></i> Email
                                 </a>
 
+                                <a href="https://nc-website-ochre.vercel.app">
+                                    <i className="bi bi-laptop"></i> Website
+                                </a>
+
                             </div>
                         </Accordion.Body>
                     </Accordion.Item>
